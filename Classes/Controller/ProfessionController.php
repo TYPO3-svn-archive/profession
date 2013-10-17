@@ -72,7 +72,7 @@ class ProfessionController extends AbstractController {
 	}
 
 	/**
-	 * @param string                                              $searchWord
+	 * @param string $searchWord
 	 *
 	 */
 	public function searchAction($searchWord) {
