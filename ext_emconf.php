@@ -10,7 +10,7 @@
 
 $EM_CONF[$_EXTKEY] = array(
 	'title'              => 'Profession',
-	'description'        => '',
+	'description'        => 'HDNET Company extension (Career-Portal).',
 	'category'           => 'misc',
 	'shy'                => 0,
 	'version'            => '6.1.0',
