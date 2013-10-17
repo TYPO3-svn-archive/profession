@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Languaeg file is generate by the HDNET_CAREER extension on: Tuesday, 02-Jul-13 07:29:53 UTC</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="plugin.profession"><![CDATA[Career-Portal]]></label>
+			<label index="plugin.profession.description"><![CDATA[Career-Portal to show job offers]]></label>
+
+			<label index="tx_profession_domain_model_offer"><![CDATA[Job Offer]]></label>
+			<label index="tx_profession_domain_model_offer.start_date"><![CDATA[Begin date]]></label>
+			<label index="tx_profession_domain_model_offer.description"><![CDATA[Description]]></label>
+			<label index="tx_profession_domain_model_offer.title"><![CDATA[Title]]></label>
+			<label index="tx_profession_domain_model_offer.data"><![CDATA[File]]></label>
+			<label index="tx_profession_domain_model_offer.type"><![CDATA[Type]]></label>
+			<label index="tx_profession_domain_model_offer.location"><![CDATA[Location (Also a fallback if there is no contact person)]]></label>
+			<label index="tx_profession_domain_model_offer.contact_person"><![CDATA[Contact person]]></label>
+			<label index="tx_profession_domain_model_offer.availability_now"><![CDATA[Now available]]></label>
+			<label index="tx_profession_domain_model_type"><![CDATA[Jobtype]]></label>
+			<label index="tx_profession_domain_model_type.description"><![CDATA[Description]]></label>
+			<label index="tx_profession_domain_model_type.type"><![CDATA[Type]]></label>
+			<label index="tx_profession_domain_model_offer.what_we_offer"><![CDATA[What we offer]]></label>
+			<label index="tx_profession_domain_model_offer.applicant_profile"><![CDATA[Applicant profile]]></label>
+			<label index="tx_profession_domain_model_offer.job_challenge"><![CDATA[Job challenge]]></label>
+
+			<label index="searchfield.categoryLabel"><![CDATA[Select category]]></label>
+			<label index="searchfield.companyLabel"><![CDATA[Select location]]></label>
+			<label index="searchfield.category"><![CDATA[Category:]]></label>
+			<label index="searchfield.location"><![CDATA[Location:]]></label>
+			<label index="searchfield.circumcircle"><![CDATA[Circumcircle:]]></label>
+			<label index="searchfield.fullSearch"><![CDATA[Text search:]]></label>
+			<label index="searchfield.searchWordLabel"><![CDATA[Search]]></label>
+			<label index="searchfield.searchSubmit"><![CDATA[Search]]></label>
+			<label index="searchfield.zipcode"><![CDATA[Zipcode:]]></label>
+
+
+
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="plugin.profession"><![CDATA[Career-Portal]]></label>
+			<label index="plugin.profession.description"><![CDATA[Karrierportal zum Anzeigen von Stellenangeboten]]></label>
+
+			<label index="tx_profession_domain_model_offer"><![CDATA[Stellenangebot]]></label>
+			<label index="tx_profession_domain_model_offer.start_date"><![CDATA[Verfügbarkeit]]></label>
+			<label index="tx_profession_domain_model_offer.description"><![CDATA[Beschreibung]]></label>
+			<label index="tx_profession_domain_model_offer.title"><![CDATA[Titel]]></label>
+			<label index="tx_profession_domain_model_offer.data"><![CDATA[Datenanhang]]></label>
+			<label index="tx_profession_domain_model_offer.type"><![CDATA[Typ]]></label>
+			<label index="tx_profession_domain_model_offer.location"><![CDATA[Standort (Fallback falls keine Kontaktperson eingetragen ist)]]></label>
+			<label index="tx_profession_domain_model_offer.contact_person"><![CDATA[contact_person]]></label>
+			<label index="tx_profession_domain_model_offer.availability_now"><![CDATA[Sofort verfügbar]]></label>
+			<label index="tx_profession_domain_model_type"><![CDATA[Jobtyp]]></label>
+			<label index="tx_profession_domain_model_type.description"><![CDATA[Beschreibung]]></label>
+			<label index="tx_profession_domain_model_type.type"><![CDATA[Typ]]></label>
+			<label index="tx_profession_domain_model_offer.what_we_offer"><![CDATA[Was wir bieten]]></label>
+			<label index="tx_profession_domain_model_offer.applicant_profile"><![CDATA[Bewerberprofil]]></label>
+			<label index="tx_profession_domain_model_offer.job_challenge"><![CDATA[Herausforderungen]]></label>
+
+			<label index="searchfield.categoryLabel"><![CDATA[Kategorie wählen]]></label>
+			<label index="searchfield.companyLabel"><![CDATA[Standort wählen]]></label>
+			<label index="searchfield.category"><![CDATA[Kategorie:]]></label>
+			<label index="searchfield.location"><![CDATA[Standort:]]></label>
+			<label index="searchfield.circumcircle"><![CDATA[Umkreis (km):]]></label>
+			<label index="searchfield.fullSearch"><![CDATA[Volltextsuche:]]></label>
+			<label index="searchfield.searchWordLabel"><![CDATA[Stichwort]]></label>
+			<label index="searchfield.searchSubmit"><![CDATA[Suche]]></label>
+			<label index="searchfield.zipcode"><![CDATA[PLZ:]]></label>
+
+		</languageKey>
+	</data>
+</T3locallang>

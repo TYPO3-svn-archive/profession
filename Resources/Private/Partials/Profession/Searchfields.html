@@ -1,0 +1,52 @@
+<div class="search" style="margin-bottom: 20px">
+	<H2>Volltextsuche</H2>
+
+	<div class="full" style="height:95px; width:100%; background-color:lime;">
+		<fieldset>
+			<h3>
+				<f:translate key="searchfield.fullSearch">Text search:</f:translate>
+			</h3>
+			<f:form action="search">
+				<f:form.textfield name="searchWord" value="{searchWord}" placeholder="{f:translate(key: 'searchfield.searchWordLabel', default:'search')}" />
+				<br /><br />
+				<f:form.submit name="seach" value="{f:translate(key: 'searchfield.searchSubmit', default:'search')}" />
+			</f:form>
+		</fieldset>
+	</div>
+	<br />
+
+	<H2>Filtersuche</H2>
+
+	<div class="category" style="height:280px; width:100%; background-color:lime;">
+		<fieldset>
+			<f:form action="filter" object="{request}" objectName="filterRequest" id="filterRequest">
+				<h3>
+					<f:translate key="searchfield.category">Category:</f:translate>
+				</h3>
+				<f:form.select property="category" options="{categories}" optionValueField="uid" optionLabelField="type" prependOptionLabel="{f:translate(key: 'searchfield.categoryLabel', default:'please select')}" prependOptionValue="" />
+				<br /><br />
+
+				<h3>
+					<f:translate key="searchfield.location">Location:</f:translate>
+				</h3>
+				<f:form.select property="city" options="{companies}" optionValueField="uid" optionLabelField="city" prependOptionLabel="{f:translate(key: 'searchfield.companyLabel', default:'please select')}" prependOptionValue="" />
+				<br /><br />
+
+				<div class="circumcircleSearch">
+					<h3>
+						<f:translate key="searchfield.zipcode">Zipcode:</f:translate>
+					</h3>
+					<f:form.textfield property="zipcode" value="zipcode" />
+					<br /><br />
+
+					<h3>
+						<f:translate key="searchfield.circumcircle">Circumcircle:</f:translate>
+					</h3>
+					<f:form.textfield property="circumcircle" value="circumcircle" />
+					<br /><br />
+				</div>
+				<f:form.submit name="seach" value="Search" />
+			</f:form>
+		</fieldset>
+	</div>
+</div>

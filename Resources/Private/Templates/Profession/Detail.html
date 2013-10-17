@@ -1,0 +1,110 @@
+{namespace h=TYPO3\Hdnet\ViewHelpers}
+
+<div class="offer" xmlns:f="http://www.w3.org/1999/html">
+	<div class="title">
+		<h1>{offer.title}</h1>
+	</div>
+	<div class="detail">
+		<f:if condition="{offer.jobChallenge}">
+			<br />
+
+			<h3>Ihre Aufgaben</h3>
+
+			<div class="jobChallenge">{offer.jobChallenge}</div>
+		</f:if>
+		<f:if condition="{offer.applicantProfile}">
+			<br />
+
+			<h3>Ihr Profil</h3>
+
+			<div class="applicantProfile">{offer.applicantProfile}</div>
+		</f:if>
+		<f:if condition="{offer.whatWeOffer}">
+			<br />
+
+			<h3>Was wir Ihnen bieten</h3>
+
+			<div class="whatWeOffer">{offer.whatWeOffer}</div>
+		</f:if>
+	</div>
+	<div class="contact">
+		<f:if condition="{offer.contactPerson}">
+			<f:then>
+				<div class="person">
+					<br />
+
+					<h3>Ansprechpartner:</h3>
+					<f:if condition="{offer.contactPerson.image}">
+						<div class="image">
+							<f:image src="{offer.contactPerson.imagepath}" alt="{offer.contactPerson.name} {offer.contactPerson.lastName}" treatIdAsReference="TRUE" maxWidth="256" maxHeight="199" width="256c" height="199c" />
+						</div>
+					</f:if>
+					Name: {offer.contactPerson.name}<br />
+					<f:if condition="{offer.contactPerson.email}">E-Mail:
+						<f:link.email email="{offer.contactPerson.email}">{offer.contactPerson.email}</f:link.email>
+						<br />
+					</f:if>
+					<f:if condition="{offer.contactPerson.phone}">Tel: {offer.contactPerson.phone}</f:if>
+					<br />
+					<f:if condition="{offer.contactPerson.address}">Adresse:
+						<div>
+							<f:format.nl2br>{offer.contactPerson.address}</f:format.nl2br>
+						</div>
+					</f:if>
+				</div>
+			</f:then>
+			<f:else>
+				<div class="contactLocation">
+					<br />
+
+					<h3>Anschrift</h3>
+					<f:if condition="{settings.emailAddress}">
+						<f:then>
+							E-Mail:
+							<f:link.email email="{settings.emailAddress}">{settings.emailAddress}</f:link.email>
+						</f:then>
+						<f:else>
+							<f:link.email email="{offer.location.email}">{offer.location.email}</f:link.email>
+						</f:else>
+						<br />
+					</f:if>
+					<f:if condition="{offer.location.phone}">Tel: {offer.location.phone}</f:if>
+					<f:if condition="{offer.location.address}">Adresse: {offer.location.address}</f:if>
+				</div>
+			</f:else>
+		</f:if>
+	</div>
+	<div class="location">
+		<div class="address">
+			<p>{offer.location.company}<br />
+				{offer.location..address}<br />
+				{offer.location..zip} {offer.location.city}, {address.country.shortNameLocal}
+			<p>
+				<f:if condition="{address.phone}">
+					<f:translate key="contactbox.tel">Tel.:</f:translate>
+					{address.phone}<br /></f:if>
+				<f:if condition="{address.fax}">
+					<f:translate key="contactbox.fax">Fax.:</f:translate>
+					{address.fax}<br /></f:if>
+				<f:if condition="{address.email}">
+					<f:translate key="contactbox.email">E-Mail:</f:translate>
+					<f:link.email email="{address.email}">{address.email}</f:link.email>
+				</f:if>
+				<f:if condition="{address.www}">
+					<f:translate key="contactbox.website">Website:</f:translate>
+					<f:link.external uri="{address.www}" target="_blank" rel="nofollow">{address.www}</f:link.external>
+					<br /></f:if>
+			</p>
+		</div>
+		<div class="map">
+			<h:map width="330" height="236" latitude="{address.latitude}" longitude="{address.longitude}" zoom='15' fitBounds="FALSE">
+				<h:map.marker title="{address.company}" latitude="{address.latitude}" longitude="{address.longitude}" />
+			</h:map>
+		</div>
+	</div>
+	<div class="apply">
+		<f:form action="apply" arguments="{offer : offer}">
+
+		</f:form>
+	</div>
+</div>

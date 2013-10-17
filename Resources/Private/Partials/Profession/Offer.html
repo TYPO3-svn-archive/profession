@@ -1,0 +1,18 @@
+<f:link.action action="detail" arguments="{offer : offer}">
+	<li style="list-style: none">
+		<div style="border:2px solid red;margin-bottom:5px; height:25px; padding:6px;">
+			<div style="width:450px;float:left;">{offer.title}</div>
+			<div style="width:100px;float:left;">{offer.location.city}</div>
+			<f:if condition="{offer.availabilityNow}">
+				<f:then>
+					<div style="width:100px;float:left;">Now available</div>
+				</f:then>
+				<f:else>
+					<div style="width:100px;float:left;">
+						<f:format.date format="Y-m-d">{offer.startDate}</f:format.date>
+					</div>
+				</f:else>
+			</f:if>
+		</div>
+	</li>
+</f:link.action>
