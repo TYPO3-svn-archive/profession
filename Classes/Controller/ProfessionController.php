@@ -98,7 +98,7 @@ class ProfessionController extends AbstractController {
 	 * @param \TYPO3\Profession\Domain\Model\Request\ApplicationRequest $application
 	 * @param \TYPO3\Profession\Domain\Model\Offer                      $offer
 	 */
-	public function applicationAction(\TYPO3\Profession\Domain\Model\Request\ApplicationRequest $application, \TYPO3\Profession\Domain\Model\Offer $offer = NULL){
+	public function applicationAction(\TYPO3\Profession\Domain\Model\Request\ApplicationRequest $application = NULL, \TYPO3\Profession\Domain\Model\Offer $offer = NULL){
 
 		$this->view->assign('offer', $offer);
 	}

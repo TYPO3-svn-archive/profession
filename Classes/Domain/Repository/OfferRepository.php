@@ -31,13 +31,15 @@ class OfferRepository extends AbstractRepository {
 		$query = $this->createQuery();
 		$constraints = array();
 
-		$constraints[] = $query->like('type', $filterRequest->getCategory());
-		$constraints[] = $query->like('location', $filterRequest->getCity());
+		if ($filterRequest->getCategory() !== ''){
+			$constraints[] = $query->like('type', $filterRequest->getCategory());
+		}
+
+		if ($filterRequest->getCity() !== ''){
+			$constraints[] = $query->like('location', $filterRequest->getCity());
+		}
 		$query->matching($query->logicalAnd($constraints));
-		#return $query->execute();
-
-
-
+		return $query->execute();
 	}
 
 	/**
