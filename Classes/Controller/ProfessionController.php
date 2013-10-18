@@ -47,8 +47,7 @@ class ProfessionController extends AbstractController {
 	 * Show all offers
 	 */
 	public function indexAction() {
-		$this->view->assign('categories', $this->typeRepository->findAll());
-		$this->view->assign('companies', $this->companyRepository->findAll());
+		$this->assignCategoriesAndCities();
 	}
 
 	/**
@@ -64,11 +63,9 @@ class ProfessionController extends AbstractController {
 	 * @param \TYPO3\Profession\Domain\Model\Request\FilterRequest $filterRequest
 	 */
 	public function filterAction(\TYPO3\Profession\Domain\Model\Request\FilterRequest $filterRequest) {
-		DebuggerUtility::var_dump($filterRequest);
-		$this->offerRepository->findByRequest($filterRequest);
-		die();
 		$offers = $this->offerRepository->findByRequest($filterRequest);
 		$this->view->assign('offers', $offers);
+		$this->assignCategoriesAndCities();
 	}
 
 	/**
@@ -93,9 +90,27 @@ class ProfessionController extends AbstractController {
 
 		$offerResult = $this->offerRepository->findBySearchWord($properties, $searchWord);
 
+		$this->assignCategoriesAndCities();
+		$this->view->assign('offers', $offerResult);
+	}
+
+	/**
+	 * @param \TYPO3\Profession\Domain\Model\Request\ApplicationRequest $application
+	 * @param \TYPO3\Profession\Domain\Model\Offer                      $offer
+	 */
+	public function applicationAction(\TYPO3\Profession\Domain\Model\Request\ApplicationRequest $application, \TYPO3\Profession\Domain\Model\Offer $offer = NULL){
+
+		$this->view->assign('offer', $offer);
+	}
+
+	/**
+	 * Get categories and cities
+	 *
+	 * @return array
+	 */
+	private function assignCategoriesAndCities(){
 		$this->view->assign('categories', $this->typeRepository->findAll());
 		$this->view->assign('companies', $this->companyRepository->findAll());
-		$this->view->assign('offers', $offerResult);
 	}
 
 }

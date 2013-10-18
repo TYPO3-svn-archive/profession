@@ -14,6 +14,7 @@ if (!defined('TYPO3_MODE')) {
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
 	'TYPO3.' . $_EXTKEY,
 	'Profession',
+	array('Profession' => 'index,detail,search,filter'),
 	array('Profession' => 'index,detail,search,filter')
 );
 

@@ -28,21 +28,16 @@ class OfferRepository extends AbstractRepository {
 	 * @return array|\TYPO3\CMS\Extbase\Persistence\QueryResultInterface
 	 */
 	public function findByRequest(\TYPO3\Profession\Domain\Model\Request\FilterRequest $filterRequest) {
+		$query = $this->createQuery();
+		$constraints = array();
+
+		$constraints[] = $query->like('type', $filterRequest->getCategory());
+		$constraints[] = $query->like('location', $filterRequest->getCity());
+		$query->matching($query->logicalAnd($constraints));
+		#return $query->execute();
 
 
 
-			$query = $this->createQuery();
-			$constraints = array();
-			foreach ($filterRequest as $filterProperty) {
-				DebuggerUtility::var_dump($filterProperty);
-				#$constraints[] = $query->like($property, '%' . $this->escapeLikeQuery($searchWord) . '%', FALSE);
-			}
-			$query->matching($query->logicalOr($constraints));
-			die();
-			return $query->execute();
-
-
-		return $this->findAll();
 	}
 
 	/**
@@ -64,6 +59,5 @@ class OfferRepository extends AbstractRepository {
 		$lonB = $longitudeB / 180 * 3.14159265358979323;
 		return acos(sin($latA) * sin($latB) + cos($latA) * cos($latB) * cos($lonB - $lonA)) * $EQUATORIAL_RADIUS_KM;
 	}
-
 
 }

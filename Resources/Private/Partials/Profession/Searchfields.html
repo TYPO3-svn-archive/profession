@@ -1,3 +1,10 @@
+<f:flashMessages />
+<ul class="errors">
+	<f:form.errors>
+		<li>{error.code}: {error.message}</li>
+	</f:form.errors>
+</ul>
+
 <div class="search" style="margin-bottom: 20px">
 	<H2>Volltextsuche</H2>
 
@@ -31,20 +38,21 @@
 				</h3>
 				<f:form.select property="city" options="{companies}" optionValueField="uid" optionLabelField="city" prependOptionLabel="{f:translate(key: 'searchfield.companyLabel', default:'please select')}" prependOptionValue="" />
 				<br /><br />
-
+<!--
 				<div class="circumcircleSearch">
 					<h3>
 						<f:translate key="searchfield.zipcode">Zipcode:</f:translate>
 					</h3>
-					<f:form.textfield property="zipcode" value="zipcode" />
+					<f:form.textfield property="zipcode" placeholder="zipcode" value="" />
 					<br /><br />
 
 					<h3>
 						<f:translate key="searchfield.circumcircle">Circumcircle:</f:translate>
 					</h3>
-					<f:form.textfield property="circumcircle" value="circumcircle" />
+					<f:form.textfield property="circumcircle" placeholder="circumcircle" value="" />
 					<br /><br />
 				</div>
+-->
 				<f:form.submit name="seach" value="Search" />
 			</f:form>
 		</fieldset>
