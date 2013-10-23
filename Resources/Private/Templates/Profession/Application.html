@@ -9,55 +9,46 @@
 		</f:else>
 	</f:if>
 
-	<f:form action="application" object="{request}" objectName="applicationRequest" id="applicationRequest">
+	<f:form action="sendApplication" object="{applicationRequest}" objectName="applicationRequest" id="applicationRequest" >
 		<fieldset>
 			<legend>
 				Persönliche Daten
 			</legend>
 			<div class="gender">
-				<f:translate key="application.gender">Gender:</f:translate>
-				<br />
+				<label><f:translate key="application.gender">Gender:</f:translate></label>
 				<f:form.select property="gender" options="{1: 'Herr', 2: 'Frau'}" optionValueField="uid" prependOptionLabel="{f:translate(key: 'application.companyLabel', default:'Mrs/Mr')}" prependOptionValue="" />
 			</div>
 			<div class="lastname">
-				<f:translate key="application.lastname">Lastname:</f:translate>
-				<br />
+				<label><f:translate key="application.lastname">Lastname:</f:translate></label>
 				<f:form.textfield property="lastname" placeholder="{f:translate(key: 'application.lastname', default:'Please insert')}" value="" />
 			</div>
 			<div class="firstname">
-				<f:translate key="application.firstname">Firstname:</f:translate>
-				<br />
+				<label><f:translate key="application.firstname">Firstname:</f:translate></label>
 				<f:form.textfield property="firstname" placeholder="{f:translate(key: 'application.firstname', default:'Please insert')}" value="" />
 			</div>
 			<div class="street_streetNumber">
-				<f:translate key="application.street">Street/Nr:</f:translate>
-				<br />
+				<label><f:translate key="application.street">Street/Nr:</f:translate></label>
 				<f:form.textfield property="street" placeholder="{f:translate(key: 'application.street', default:'Please insert')}" value="" />
 				<f:form.textfield property="streetNumber" placeholder="{f:translate(key: 'application.streetNumberLabel', default:'Nr')}" value="" />
 			</div>
 			<div class="zip">
-				<f:translate key="application.zip">ZIP:</f:translate>
-				<br />
+				<label><f:translate key="application.zip">ZIP:</f:translate></label>
 				<f:form.textfield property="zip" placeholder="{f:translate(key: 'application.zip', default:'Please insert')}" value="" />
 			</div>
 			<div class="city">
-				<f:translate key="application.city">City:</f:translate>
-				<br />
+				<label><f:translate key="application.city">City:</f:translate></label>
 				<f:form.textfield property="city" placeholder="{f:translate(key: 'application.city', default:'Please insert')}" value="" />
 			</div>
 			<div class="country">
-				<f:translate key="application.country">Country:</f:translate>
-				<br />
+				<label><f:translate key="application.country">Country:</f:translate></label>
 				<f:form.select property="country" options="{1: 'Germany', 2: 'Turkey'}" optionValueField="uid" prependOptionLabel="{f:translate(key: 'application.country', default:'Please select')}" prependOptionValue="" />
 			</div>
 			<div class="phone">
-				<f:translate key="application.phone">Phone:</f:translate>
-				<br />
+				<label><f:translate key="application.phone">Phone:</f:translate></label>
 				<f:form.textfield property="phone" placeholder="{f:translate(key: 'application.phone', default:'Please insert')}" value="" />
 			</div>
 			<div class="email">
-				<f:translate key="application.email">E-Mail:</f:translate>
-				<br />
+				<label><f:translate key="application.email">E-Mail:</f:translate></label>
 				<f:form.textfield property="email" placeholder="{f:translate(key: 'application.email', default:'Please insert')}" value="" />
 			</div>
 		</fieldset>

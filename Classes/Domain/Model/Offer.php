@@ -18,6 +18,7 @@ use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
  * @package    Hdnet_career
  * @subpackage Domain/Moden
  * @author     Ercüment Topal <ercuement.topal@hdnet.de>
+ * @db
  */
 class Offer extends \TYPO3\Hdnet\Domain\Model\AbstractModel {
 	/**

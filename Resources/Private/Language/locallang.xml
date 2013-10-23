@@ -35,6 +35,14 @@
 			<label index="searchfield.searchSubmit"><![CDATA[Search]]></label>
 			<label index="searchfield.zipcode"><![CDATA[Zipcode:]]></label>
 
+			<label index="application.gender"><![CDATA[Gender]]></label>
+			<label index="application.lastname"><![CDATA[Lastname]]></label>
+			<label index="application.firstname"><![CDATA[Firstname]]></label>
+			<label index="application.zip"><![CDATA[Zipcode]]></label>
+			<label index="application.city"><![CDATA[City]]></label>
+			<label index="application.country"><![CDATA[Country]]></label>
+			<label index="application.phone"><![CDATA[Phone]]></label>
+			<label index="application.email"><![CDATA[E-Mail]]></label>
 
 
 		</languageKey>
@@ -67,6 +75,15 @@
 			<label index="searchfield.searchWordLabel"><![CDATA[Stichwort]]></label>
 			<label index="searchfield.searchSubmit"><![CDATA[Suche]]></label>
 			<label index="searchfield.zipcode"><![CDATA[PLZ:]]></label>
+
+			<label index="application.gender"><![CDATA[Geschlecht]]></label>
+			<label index="application.lastname"><![CDATA[Nachname]]></label>
+			<label index="application.firstname"><![CDATA[Vorname]]></label>
+			<label index="application.zip"><![CDATA[PLZ]]></label>
+			<label index="application.city"><![CDATA[Stadt]]></label>
+			<label index="application.country"><![CDATA[Land]]></label>
+			<label index="application.phone"><![CDATA[Telefon]]></label>
+			<label index="application.email"><![CDATA[E-Mail]]></label>
 
 		</languageKey>
 	</data>

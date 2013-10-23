@@ -15,6 +15,7 @@ namespace TYPO3\Profession\Domain\Model;
  * @package    Profession
  * @subpackage Domain/Moden
  * @author     Ercüment Topal <ercuement.topal@hdnet.de>
+ * @db
  */
 class Type extends \TYPO3\Hdnet\Domain\Model\AbstractModel {
 

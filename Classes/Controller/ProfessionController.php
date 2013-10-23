@@ -62,8 +62,12 @@ class ProfessionController extends AbstractController {
 	 *
 	 * @param \TYPO3\Profession\Domain\Model\Request\FilterRequest $filterRequest
 	 */
-	public function filterAction(\TYPO3\Profession\Domain\Model\Request\FilterRequest $filterRequest) {
-		$offers = $this->offerRepository->findByRequest($filterRequest);
+	public function filterAction(\TYPO3\Profession\Domain\Model\Request\FilterRequest $filterRequest = NULL) {
+		if(isset($filterRequest)){
+			$offers = $this->offerRepository->findByRequest($filterRequest);
+		}else{
+			$offers = $this->offerRepository->findAll();
+		}
 		$this->view->assign('offers', $offers);
 		$this->assignCategoriesAndCities();
 	}
@@ -95,12 +99,21 @@ class ProfessionController extends AbstractController {
 	}
 
 	/**
-	 * @param \TYPO3\Profession\Domain\Model\Request\ApplicationRequest $application
+	 * @param \TYPO3\Profession\Domain\Model\Request\ApplicationRequest $applicationRequest
 	 * @param \TYPO3\Profession\Domain\Model\Offer                      $offer
 	 */
-	public function applicationAction(\TYPO3\Profession\Domain\Model\Request\ApplicationRequest $application = NULL, \TYPO3\Profession\Domain\Model\Offer $offer = NULL){
-
+	public function applicationAction(\TYPO3\Profession\Domain\Model\Request\ApplicationRequest $applicationRequest = NULL, \TYPO3\Profession\Domain\Model\Offer $offer = NULL){
 		$this->view->assign('offer', $offer);
+		$this->view->assign('applicationRequest', $applicationRequest);
+	}
+
+	/**
+	 * @param \TYPO3\Profession\Domain\Model\Request\ApplicationRequest $applicationRequest
+	 * @param \TYPO3\Profession\Domain\Model\Offer                      $offer
+	 */
+	public function sendApplicationAction(\TYPO3\Profession\Domain\Model\Request\ApplicationRequest $applicationRequest, \TYPO3\Profession\Domain\Model\Offer $offer = NULL){
+		DebuggerUtility::var_dump($application, $offer);
+		$this->view->assign('applicationRequest', $applicationRequest);
 	}
 
 	/**

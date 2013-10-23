@@ -14,8 +14,8 @@ if (!defined('TYPO3_MODE')) {
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
 	'TYPO3.' . $_EXTKEY,
 	'Profession',
-	array('Profession' => 'index,detail,search,filter,application'),
-	array('Profession' => 'index,detail,search,filter,application')
+	array('Profession' => 'index,detail,search,filter,application,sendApplication'),
+	array('Profession' => 'index,detail,search,filter,application,sendApplication')
 );
 
 
@@ -42,4 +42,11 @@ $ttAddress = array(
 );
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_address', $ttAddress, TRUE);
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tt_address', 'xing');
+#}
+
+
+/** CSS for Profession Extension -- ERCÜMENT TOPAL **/
+
+#div.application form fieldset div {
+#	height:40px;
 #}

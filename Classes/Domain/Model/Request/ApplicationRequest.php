@@ -20,6 +20,14 @@ namespace TYPO3\Profession\Domain\Model\Request;
 class ApplicationRequest extends \TYPO3\Hdnet\Domain\Model\AbstractModel{
 
 	/**
+	 * gender
+	 *
+	 * @var string
+	 */
+	protected $gender;
+
+
+	/**
 	 * firstname
 	 *
 	 * @var string
@@ -91,6 +99,20 @@ class ApplicationRequest extends \TYPO3\Hdnet\Domain\Model\AbstractModel{
 	 * @validate EmailAddress
 	 */
 	protected $email;
+
+	/**
+	 * @param string $gender
+	 */
+	public function setGender($gender) {
+		$this->gender = $gender;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getGender() {
+		return $this->gender;
+	}
 
 	/**
 	 * @param string $city
