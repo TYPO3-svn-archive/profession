@@ -43,6 +43,7 @@
 			<label index="application.country"><![CDATA[Country]]></label>
 			<label index="application.phone"><![CDATA[Phone]]></label>
 			<label index="application.email"><![CDATA[E-Mail]]></label>
+			<label index="application.uploads"><![CDATA[Datenanhang]]></label>
 
 
 		</languageKey>
@@ -84,6 +85,7 @@
 			<label index="application.country"><![CDATA[Land]]></label>
 			<label index="application.phone"><![CDATA[Telefon]]></label>
 			<label index="application.email"><![CDATA[E-Mail]]></label>
+			<label index="application.uploads"><![CDATA[Uploads]]></label>
 
 		</languageKey>
 	</data>

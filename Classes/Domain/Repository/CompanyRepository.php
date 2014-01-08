@@ -10,6 +10,8 @@
 
 namespace TYPO3\Profession\Domain\Repository;
 
+use TYPO3\Hdnet\Service\GeoService;
+
 
 /**
  * Conpany tt_Address
@@ -27,6 +29,28 @@ class CompanyRepository extends AbstractRepository {
 	 */
 	public function createQuery() {
 		return $this->createCleanQuery();
+	}
+
+	/**
+	 *
+	 */
+	public function findByAddress($address, $distance) {
+		$geoService = new GeoService();
+
+		// try catch
+		$coordinates = $geoService->getCoordinates($address);
+		// catch
+
+		// fehlerfall prüfen und leeres ergebnis zurückliefern
+
+
+		return $this->findByGeocentricAverage(array(
+		                                           'lng' => 123213,
+		                                           'lat' => 123123
+		                                      ), array(
+		                                              'lng' => 'longitude',
+		                                              'lat' => 'latitude'
+		                                         ), 9, $distance);
 	}
 
 }
