@@ -18,14 +18,16 @@ if (!defined('TYPO3_MODE')) {
 
 /** @var $autoLoader \TYPO3\Hdnet\Service\AutoLoaderService */
 $autoLoader = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\Hdnet\\Service\\AutoLoaderService', 'profession');
-$autoLoader
-	->loadExtensionTablesSmartObjects()
-	->loadExtensionTablesFlexForms()
-	->loadExtensionTablesStaticTypoScript();
+$autoLoader->loadExtensionTables(array(
+	'CommandController',
+	'StaticTyposcript',
+	'FlexForms',
+	'ContentObjects',
+));
 
-/** @var \TYPO3\Hdnet\Utility\ExtensionUtility $extensionUtility */
-$extensionUtility = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\Hdnet\\Utility\\ExtensionUtility');
-$extensionUtility->checkAndCreateTcaInformation();
+// Register Smart models
+#\TYPO3\Hdnet\Utility\ExtensionUtility::registerSmartObject('TYPO3\\Hdnet\\Domain\\Model\\Queue');
+#\TYPO3\Hdnet\Utility\ExtensionUtility::registerSmartObject('TYPO3\\Hdnet\\Domain\\Model\\Test');
 
 // Register Plugin
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin($_EXTKEY, 'Profession', 'Profession Portal');

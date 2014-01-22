@@ -1,3 +1,4 @@
+{namespace h=TYPO3\Hdnet\ViewHelpers}
 <div class="application">
 	<h1>Bewerbungsformular</h1>
 	<f:if condition="{offer}">
@@ -16,62 +17,65 @@
 			</legend>
 			<div class="gender">
 				<label>
-					<f:translate key="application.gender">Gender:</f:translate>
+					<h:translate key="application.gender">Gender:</h:translate>
 				</label>
-				<f:form.select property="gender" options="{1: 'Herr', 2: 'Frau'}" optionValueField="uid" prependOptionLabel="{f:translate(key: 'application.companyLabel', default:'Mrs/Mr')}" prependOptionValue="" />
+				<f:form.select property="gender" options="{1: 'Herr', 2: 'Frau'}" optionValueField="uid" prependOptionLabel="{h:translate(key: 'application.companyLabel', default:'Mrs/Mr')}" prependOptionValue="" />
 			</div>
 			<div class="lastname">
 				<label>
-					<f:translate key="application.lastname">Lastname:</f:translate>
+					<h:translate key="application.lastname">Lastname:</h:translate>
 				</label>
-				<f:form.textfield property="lastname" placeholder="{f:translate(key: 'application.lastname', default:'Please insert')}" value="" />
+				<f:form.textfield property="lastname" placeholder="{h:translate(key: 'application.lastname', default:'Please insert')}" value="" />
 			</div>
 			<div class="firstname">
 				<label>
-					<f:translate key="application.firstname">Firstname:</f:translate>
+					<h:translate key="application.firstname">Firstname:</h:translate>
 				</label>
-				<f:form.textfield property="firstname" placeholder="{f:translate(key: 'application.firstname', default:'Please insert')}" value="" />
+				<f:form.textfield property="firstname" placeholder="{h:translate(key: 'application.firstname', default:'Please insert')}" value="" />
 			</div>
 			<div class="street_streetNumber">
 				<label>
-					<f:translate key="application.street">Street/Nr:</f:translate>
+					<h:translate key="application.street">Street/Nr:</h:translate>
 				</label>
-				<f:form.textfield property="street" placeholder="{f:translate(key: 'application.street', default:'Please insert')}" value="" />
-				<f:form.textfield property="streetNumber" placeholder="{f:translate(key: 'application.streetNumberLabel', default:'Nr')}" value="" />
+				<f:form.textfield property="street" placeholder="{h:translate(key: 'application.street', default:'Please insert')}" value="" />
+				<label>
+					<h:translate key="application.streetNr"></h:translate>
+				</label>
+				<f:form.textfield property="streetNumber" placeholder="{h:translate(key: 'application.streetNumberLabel', default:'Nr')}" value="" />
 			</div>
 			<div class="zip">
 				<label>
-					<f:translate key="application.zip">ZIP:</f:translate>
+					<h:translate key="application.zip">ZIP:</h:translate>
 				</label>
-				<f:form.textfield property="zip" placeholder="{f:translate(key: 'application.zip', default:'Please insert')}" value="" />
+				<f:form.textfield property="zip" placeholder="{h:translate(key: 'application.zip', default:'Please insert')}" value="" />
 			</div>
 			<div class="city">
 				<label>
-					<f:translate key="application.city">City:</f:translate>
+					<h:translate key="application.city">City:</h:translate>
 				</label>
-				<f:form.textfield property="city" placeholder="{f:translate(key: 'application.city', default:'Please insert')}" value="" />
+				<f:form.textfield property="city" placeholder="{h:translate(key: 'application.city', default:'Please insert')}" value="" />
 			</div>
 			<div class="country">
 				<label>
-					<f:translate key="application.country">Country:</f:translate>
+					<h:translate key="application.country">Country:</h:translate>
 				</label>
-				<f:form.select property="country" options="{1: 'Germany', 2: 'Turkey'}" optionValueField="uid" prependOptionLabel="{f:translate(key: 'application.country', default:'Please select')}" prependOptionValue="" />
+				<f:form.select property="country" options="{1: 'Germany', 2: 'Turkey'}" optionValueField="uid" prependOptionLabel="{h:translate(key: 'application.country', default:'Please select')}" prependOptionValue="" />
 			</div>
 			<div class="phone">
 				<label>
-					<f:translate key="application.phone">Phone:</f:translate>
+					<h:translate key="application.phone">Phone:</h:translate>
 				</label>
-				<f:form.textfield property="phone" placeholder="{f:translate(key: 'application.phone', default:'Please insert')}" value="" />
+				<f:form.textfield property="phone" placeholder="{h:translate(key: 'application.phone', default:'Please insert')}" value="" />
 			</div>
 			<div class="email">
 				<label>
-					<f:translate key="application.email">E-Mail:</f:translate>
+					<h:translate key="application.email">E-Mail:</h:translate>
 				</label>
-				<f:form.textfield property="email" placeholder="{f:translate(key: 'application.email', default:'Please insert')}" value="" />
+				<f:form.textfield property="email" placeholder="{h:translate(key: 'application.email', default:'Please insert')}" value="" />
 			</div>
 			<div class="uploads">
 				<labal>
-					<f:translate key="application.uploads">Uploads:</f:translate>
+					<h:translate key="application.uploads">Uploads:</h:translate>
 				</labal>
 				<f:form.upload name="file" />
 			</div>

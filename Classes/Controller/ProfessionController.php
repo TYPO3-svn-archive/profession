@@ -10,10 +10,13 @@
 
 namespace TYPO3\Profession\Controller;
 
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\MathUtility;
 use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 use TYPO3\Hdnet\Controller\AbstractController;
 use TYPO3\Profession\Domain\Model\Offer;
+use TYPO3\Profession\Domain\Model\Request\ApplicationRequest;
+use \TYPO3\Profession\Domain\Model\Request\FilterRequest;
 
 /**
  * CareerController
@@ -51,21 +54,21 @@ class ProfessionController extends AbstractController {
 	}
 
 	/**
-	 * @param \TYPO3\Profession\Domain\Model\Offer $offer
+	 * @param Offer $offer
 	 */
-	public function detailAction(\TYPO3\Profession\Domain\Model\Offer $offer) {
+	public function detailAction(Offer $offer) {
 		$this->view->assign('offer', $offer);
 	}
 
 	/**
 	 * Filter offers
 	 *
-	 * @param \TYPO3\Profession\Domain\Model\Request\FilterRequest $filterRequest
+	 * @param FilterRequest $filterRequest
 	 */
-	public function filterAction(\TYPO3\Profession\Domain\Model\Request\FilterRequest $filterRequest = NULL) {
-		if(isset($filterRequest)){
+	public function filterAction(FilterRequest $filterRequest = NULL) {
+		if (isset($filterRequest)) {
 			$offers = $this->offerRepository->findByRequest($filterRequest);
-		}else{
+		} else {
 			$offers = $this->offerRepository->findAll();
 		}
 		$this->view->assign('offers', $offers);
@@ -99,20 +102,20 @@ class ProfessionController extends AbstractController {
 	}
 
 	/**
-	 * @param \TYPO3\Profession\Domain\Model\Request\ApplicationRequest $applicationRequest
-	 * @param \TYPO3\Profession\Domain\Model\Offer                      $offer
+	 * @param ApplicationRequest $applicationRequest
+	 * @param Offer              $offer
 	 */
-	public function applicationAction(\TYPO3\Profession\Domain\Model\Request\ApplicationRequest $applicationRequest = NULL, \TYPO3\Profession\Domain\Model\Offer $offer = NULL){
+	public function applicationAction(ApplicationRequest $applicationRequest = NULL, Offer $offer = NULL) {
 		$this->view->assign('offer', $offer);
 		$this->view->assign('applicationRequest', $applicationRequest);
 	}
 
 	/**
-	 * @param \TYPO3\Profession\Domain\Model\Request\ApplicationRequest $applicationRequest
-	 * @param \TYPO3\Profession\Domain\Model\Offer                      $offer
+	 * @param ApplicationRequest $applicationRequest
+	 * @param Offer              $offer
 	 */
-	public function sendApplicationAction(\TYPO3\Profession\Domain\Model\Request\ApplicationRequest $applicationRequest, \TYPO3\Profession\Domain\Model\Offer $offer = NULL){
-		DebuggerUtility::var_dump($application, $offer);
+	public function thanksAction(ApplicationRequest $applicationRequest, Offer $offer = NULL) {
+		$this->mailAction($applicationRequest, $offer);
 		$this->view->assign('applicationRequest', $applicationRequest);
 	}
 
@@ -121,9 +124,38 @@ class ProfessionController extends AbstractController {
 	 *
 	 * @return array
 	 */
-	private function assignCategoriesAndCities(){
+	private function assignCategoriesAndCities() {
 		$this->view->assign('categories', $this->typeRepository->findAll());
 		$this->view->assign('companies', $this->companyRepository->findAll());
 	}
 
+	/**
+	 * Send mail
+	 *
+	 * @param ApplicationRequest $applicationRequest
+	 * @param Offer              $offer
+	 */
+	public function mailAction(ApplicationRequest $applicationRequest, Offer $offer) {
+
+		$this->view->assign('to', array($this->getTargetEmailAddress() => 'CRM SWBi'));
+		$this->view->assign('from', array('HDNET@typo3_profession.de' => 'Bewerbungsformular'));
+		$this->view->assign('subject', 'Bewerbung von '. $applicationRequest->getLastname().', '.$applicationRequest->getFirstname());
+		$this->view->assign('offer', $offer);
+		$this->view->assign('applicant', $applicationRequest);
+		//$this->view->assign('files', array($filepath));
+		$this->view->render();
+		$this->forward('thanks');
+	}
+
+	/**
+	 * Get the target Email address
+	 *
+	 * @return string
+	 */
+	protected function getTargetEmailAddress() {
+		if (isset($this->settings['emailAddress']) && GeneralUtility::validEmail(trim($this->settings['emailAddress']))) {
+			return trim($this->settings['confMail']);
+		}
+		return '';
+	}
 }

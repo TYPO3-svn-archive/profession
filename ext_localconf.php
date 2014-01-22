@@ -21,10 +21,12 @@ if (!defined('TYPO3_MODE')) {
 
 /** @var $autoLoader \TYPO3\Hdnet\Service\AutoLoaderService */
 $autoLoader = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\Hdnet\\Service\\AutoLoaderService', 'profession');
-$autoLoader
-	->loadExtensionLocalConfigurationCommandController()
-	->loadExtensionLocalConfigurationHooks()
-	->loadExtensionLocalConfigurationXclasses();
+$autoLoader->loadExtensionConfiguration(array(
+	'CommandController',
+	'StaticTyposcript',
+	'FlexForms',
+	'ContentObjects',
+));
 
 #if ($configuration->get('enable.functions.xingfield')) {
 $ttAddress = array(
