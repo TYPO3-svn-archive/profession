@@ -6,6 +6,20 @@
 	</meta>
 	<data type="array">
 		<languageKey index="default" type="array">
+
+
+			<label index="error.applicationRequest.gender.1221560718"><![CDATA[]]></label>
+			<label index="error.applicationRequest.email.1221559976"><![CDATA[Please check your e-mail.]]></label>
+			<label index="error.applicationRequest.email.5421563143265"><![CDATA[Please insert your e-mail.]]></label>
+			<label index="error.applicationRequest.phone.1221560718"><![CDATA[Please insert your phonenumber]]></label>
+			<label index="error.applicationRequest.country.1221560718"><![CDATA[Please select a country.]]></label>
+			<label index="error.applicationRequest.city.1221560718"><![CDATA[Please insert your city.]]></label>
+			<label index="error.applicationRequest.streetNumber.1221560718"><![CDATA[Please insert your housenumber.]]></label>
+			<label index="error.applicationRequest.street.1221560718"><![CDATA[Please insert your street.]]></label>
+			<label index="error.applicationRequest.lastname.1221560718"><![CDATA[Please insert your lastname.]]></label>
+			<label index="error.applicationRequest.firstname.1221560718"><![CDATA[Please insert your firstname]]></label>
+
+
 			<label index="plugin.profession"><![CDATA[Career-Portal]]></label>
 			<label index="plugin.profession.description"><![CDATA[Career-Portal to show job offers]]></label>
 
@@ -35,7 +49,7 @@
 			<label index="searchfield.searchSubmit"><![CDATA[Search]]></label>
 			<label index="searchfield.zipcode"><![CDATA[Zipcode:]]></label>
 
-			<label index="application.gender"><![CDATA[Gender]]></label>
+			<label index="application.gender"><![CDATA[Gender:]]></label>
 			<label index="application.lastname"><![CDATA[Lastname]]></label>
 			<label index="application.firstname"><![CDATA[Firstname]]></label>
 			<label index="application.zip"><![CDATA[Zipcode]]></label>
@@ -44,11 +58,29 @@
 			<label index="application.phone"><![CDATA[Phone]]></label>
 			<label index="application.email"><![CDATA[E-Mail]]></label>
 			<label index="application.uploads"><![CDATA[Datenanhang]]></label>
-
+			<label index="application.streetNumber"><![CDATA[Nr]]></label>
+			<label index="application.streetNumberLabel"><![CDATA[Nr]]></label>
+			<label index="application.street"><![CDATA[Street/Nr]]></label>
+			<label index="application.companyLabel"><![CDATA[Mrs/Mr]]></label>
+			<label index="application.Message"><![CDATA[Message]]></label>
+			<label index="application.gender.w"><![CDATA[Mrs]]></label>
+			<label index="application.gender.m"><![CDATA[Mr]]></label>
 
 		</languageKey>
 		<languageKey index="de" type="array">
-			<label index="plugin.profession"><![CDATA[Career-Portal]]></label>
+
+			<label index="error.applicationRequest.gender.1221560718"><![CDATA[Bitte wählen Sie Ihre Anrede.]]></label>
+			<label index="error.applicationRequest.email.1221559976"><![CDATA[Bitte überprüfen Sie Ihre E-Mail-Adresse.]]></label>
+			<label index="error.applicationRequest.email.5421563143265"><![CDATA[Bitte tragen Sie Ihre E-Mail ein.]]></label>
+			<label index="error.applicationRequest.phone.1221560718"><![CDATA[Bitte tragen Sie Ihre Telefonnummer ein.]]></label>
+			<label index="error.applicationRequest.country.1221560718"><![CDATA[Bitte wählen Sie ein Land.]]></label>
+			<label index="error.applicationRequest.city.1221560718"><![CDATA[Bitte tragen Sie Ihre Stadt ein.]]></label>
+			<label index="error.applicationRequest.streetNumber.1221560718"><![CDATA[Bitte tragen Sie Ihre Hausnummer ein.]]></label>
+			<label index="error.applicationRequest.street.1221560718"><![CDATA[Bitte tragen Sie Ihre Straße ein.]]></label>
+			<label index="error.applicationRequest.lastname.1221560718"><![CDATA[Bitte tragen Sie Ihren Nachnamen ein.]]></label>
+			<label index="error.applicationRequest.firstname.1221560718"><![CDATA[Bitte tragen Sie Ihren Vornamen ein.]]></label>
+
+			<label index="plugin.profession"><![CDATA[Karriereportal]]></label>
 			<label index="plugin.profession.description"><![CDATA[Karrierportal zum Anzeigen von Stellenangeboten]]></label>
 
 			<label index="tx_profession_domain_model_offer"><![CDATA[Stellenangebot]]></label>
@@ -77,7 +109,7 @@
 			<label index="searchfield.searchSubmit"><![CDATA[Suche]]></label>
 			<label index="searchfield.zipcode"><![CDATA[PLZ:]]></label>
 
-			<label index="application.gender"><![CDATA[Geschlecht]]></label>
+			<label index="application.gender"><![CDATA[Anrede]]></label>
 			<label index="application.lastname"><![CDATA[Nachname]]></label>
 			<label index="application.firstname"><![CDATA[Vorname]]></label>
 			<label index="application.zip"><![CDATA[PLZ]]></label>
@@ -86,6 +118,13 @@
 			<label index="application.phone"><![CDATA[Telefon]]></label>
 			<label index="application.email"><![CDATA[E-Mail]]></label>
 			<label index="application.uploads"><![CDATA[Uploads]]></label>
+			<label index="application.streetNumber"><![CDATA[Nr]]></label>
+			<label index="application.streetNumberLabel"><![CDATA[Nr]]></label>
+			<label index="application.street"><![CDATA[Straße/Nr]]></label>
+			<label index="application.companyLabel"><![CDATA[Herr/Frau]]></label>
+			<label index="application.Message"><![CDATA[Nachricht]]></label>
+			<label index="application.gender.w"><![CDATA[Frau]]></label>
+			<label index="application.gender.m"><![CDATA[Herr]]></label>
 
 		</languageKey>
 	</data>

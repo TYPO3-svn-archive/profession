@@ -23,6 +23,7 @@ class ApplicationRequest extends \TYPO3\Hdnet\Domain\Model\AbstractModel{
 	 * gender
 	 *
 	 * @var string
+	 * @validate NotEmpty
 	 */
 	protected $gender;
 
@@ -76,7 +77,6 @@ class ApplicationRequest extends \TYPO3\Hdnet\Domain\Model\AbstractModel{
 
 	/**
 	 * country
-	 * TODO Country-Datenbank einbinden!!!
 	 *
 	 * @var string
 	 * @validate NotEmpty
@@ -95,10 +95,21 @@ class ApplicationRequest extends \TYPO3\Hdnet\Domain\Model\AbstractModel{
 	 * email
 	 *
 	 * @var string
-	 * @validate NotEmpty
-	 * @validate EmailAddress
+	 * @validate TYPO3\Profession\Validation\Validator\MailValidator
 	 */
 	protected $email;
+
+	/**
+	 * offer
+	 *
+	 * @var \TYPO3\Profession\Domain\Model\Offer
+	 */
+	protected $offer;
+
+	/**
+	 * @var string
+	 */
+	protected $message;
 
 	/**
 	 * @param string $gender
@@ -143,14 +154,14 @@ class ApplicationRequest extends \TYPO3\Hdnet\Domain\Model\AbstractModel{
 	}
 
 	/**
-	 * @param mixed $email
+	 * @param string $email
 	 */
 	public function setEmail($email) {
 		$this->email = $email;
 	}
 
 	/**
-	 * @return mixed
+	 * @return string
 	 */
 	public function getEmail() {
 		return $this->email;
@@ -240,7 +251,32 @@ class ApplicationRequest extends \TYPO3\Hdnet\Domain\Model\AbstractModel{
 		return $this->zip;
 	}
 
+	/**
+	 * @param string $message
+	 */
+	public function setMessage($message) {
+		$this->message = $message;
+	}
 
+	/**
+	 * @return string
+	 */
+	public function getMessage() {
+		return $this->message;
+	}
 
+	/**
+	 * @param \TYPO3\Profession\Domain\Model\Offer $offer
+	 */
+	public function setOffer($offer) {
+		$this->offer = $offer;
+	}
+
+	/**
+	 * @return \TYPO3\Profession\Domain\Model\Offer
+	 */
+	public function getOffer() {
+		return $this->offer;
+	}
 
 }

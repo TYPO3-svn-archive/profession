@@ -41,7 +41,7 @@
 					</f:if>
 					Name: {offer.contactPerson.name}<br />
 					<f:if condition="{offer.contactPerson.email}">E-Mail:
-						<f:link.email email="{offer.contactPerson.email}">{offer.contactPerson.email}</f:link.email>
+						<f:link.email email="{offer.contactPerson.email}" />
 						<br />
 					</f:if>
 					<f:if condition="{offer.contactPerson.phone}">Tel: {offer.contactPerson.phone}</f:if>
@@ -61,10 +61,10 @@
 					<f:if condition="{settings.emailAddress}">
 						<f:then>
 							E-Mail:
-							<f:link.email email="{settings.emailAddress}">{settings.emailAddress}</f:link.email>
+							<h:link.email email="{settings.emailAddress}" />
 						</f:then>
 						<f:else>
-							<f:link.email email="{offer.location.email}">{offer.location.email}</f:link.email>
+							<h:link.email email="{offer.location.email}" />
 						</f:else>
 						<br />
 					</f:if>
@@ -88,7 +88,7 @@
 					{address.fax}<br /></f:if>
 				<f:if condition="{address.email}">
 					<f:translate key="contactbox.email">E-Mail:</f:translate>
-					<f:link.email email="{address.email}">{address.email}</f:link.email>
+					<h:link.email email="{address.email}" />
 				</f:if>
 				<f:if condition="{address.www}">
 					<f:translate key="contactbox.website">Website:</f:translate>

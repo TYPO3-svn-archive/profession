@@ -11,12 +11,10 @@ if (!defined('TYPO3_MODE')) {
 	die('Access denied.');
 }
 
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-	'TYPO3.' . $_EXTKEY,
-	'Profession',
-	array('Profession' => 'index,detail,search,filter,application,sendApplication'),
-	array('Profession' => 'index,detail,search,filter,application,sendApplication')
-);
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin('TYPO3.' . $_EXTKEY, 'Profession',
+	array('Profession' => 'index,detail,search,filter,application,thanks,mail'),
+	array('Profession' => 'index,detail,search,filter,application,thanks,mail'))
+;
 
 
 /** @var $autoLoader \TYPO3\Hdnet\Service\AutoLoaderService */
@@ -31,13 +29,13 @@ $autoLoader->loadExtensionConfiguration(array(
 #if ($configuration->get('enable.functions.xingfield')) {
 $ttAddress = array(
 	'' => array(
-		'label'     => 'LLL:EXT:website/Resources/Private/Language/locallang.xml:xing',
-		'exclude'   => '0',
-		'config'    => array(
-			'type' => 'input',
-			'size' => '20',
-			'max' => '80',
-			'eval' => '',
+		'label'   => 'LLL:EXT:website/Resources/Private/Language/locallang.xml:xing',
+		'exclude' => '0',
+		'config'  => array(
+			'type'    => 'input',
+			'size'    => '20',
+			'max'     => '80',
+			'eval'    => '',
 			'default' => '',
 		),
 	),

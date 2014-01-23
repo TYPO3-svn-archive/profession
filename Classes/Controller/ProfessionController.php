@@ -10,6 +10,7 @@
 
 namespace TYPO3\Profession\Controller;
 
+use SJBR\StaticInfoTables\Utility\LocalizationUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\MathUtility;
 use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
@@ -44,6 +45,12 @@ class ProfessionController extends AbstractController {
 	 * @inject
 	 */
 	protected $companyRepository;
+
+	/**
+	 * @var \TYPO3\Profession\Domain\Repository\StaticCountryRepository
+	 * @inject
+	 */
+	protected $staticCountryRepository;
 
 	/**
 	 *
@@ -106,16 +113,19 @@ class ProfessionController extends AbstractController {
 	 * @param Offer              $offer
 	 */
 	public function applicationAction(ApplicationRequest $applicationRequest = NULL, Offer $offer = NULL) {
-		$this->view->assign('offer', $offer);
+		if ($applicationRequest === NULL) {
+			$applicationRequest = new applicationRequest();
+		}
+		$applicationRequest->setOffer($offer);
+
+		$this->view->assign('countries', $this->getCountries());
 		$this->view->assign('applicationRequest', $applicationRequest);
 	}
 
 	/**
 	 * @param ApplicationRequest $applicationRequest
-	 * @param Offer              $offer
 	 */
-	public function thanksAction(ApplicationRequest $applicationRequest, Offer $offer = NULL) {
-		$this->mailAction($applicationRequest, $offer);
+	public function thanksAction(ApplicationRequest $applicationRequest) {
 		$this->view->assign('applicationRequest', $applicationRequest);
 	}
 
@@ -133,14 +143,15 @@ class ProfessionController extends AbstractController {
 	 * Send mail
 	 *
 	 * @param ApplicationRequest $applicationRequest
-	 * @param Offer              $offer
+	 *
+	 * @view \TYPO3\Hdnet\View\MailView
 	 */
-	public function mailAction(ApplicationRequest $applicationRequest, Offer $offer) {
+	public function mailAction(ApplicationRequest $applicationRequest) {
 
-		$this->view->assign('to', array($this->getTargetEmailAddress() => 'CRM SWBi'));
-		$this->view->assign('from', array('HDNET@typo3_profession.de' => 'Bewerbungsformular'));
-		$this->view->assign('subject', 'Bewerbung von '. $applicationRequest->getLastname().', '.$applicationRequest->getFirstname());
-		$this->view->assign('offer', $offer);
+		$this->view->assign('to', array($this->getTargetEmailAddress() => 'Personalabteilung'));
+		$this->view->assign('from', array($applicationRequest->getEmail() => 'Bewerbung'));
+		$this->view->assign('subject', 'Bewerbung von ' . $applicationRequest->getLastname() . ', ' . $applicationRequest->getFirstname() . ' // ' . $applicationRequest->getOffer()
+		                                                                                                                                                                ->getTitle());
 		$this->view->assign('applicant', $applicationRequest);
 		//$this->view->assign('files', array($filepath));
 		$this->view->render();
@@ -154,8 +165,23 @@ class ProfessionController extends AbstractController {
 	 */
 	protected function getTargetEmailAddress() {
 		if (isset($this->settings['emailAddress']) && GeneralUtility::validEmail(trim($this->settings['emailAddress']))) {
-			return trim($this->settings['confMail']);
+			return trim($this->settings['emailAddress']);
 		}
 		return '';
 	}
+
+	/**
+	 * get all countries from static_countries table
+	 *
+	 * @return array
+	 */
+	public function getCountries() {
+		$countries = $this->staticCountryRepository->findAll();
+		$countryNames = array();
+		foreach ($countries as $country) {
+			$countryNames[] .= $country->getCnShortLocal();
+		}
+		return $countryNames;
+	}
+
 }

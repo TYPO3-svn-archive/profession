@@ -1,0 +1,19 @@
+{namespace h=TYPO3\Hdnet\ViewHelpers}
+
+
+<f:form.validationResults>
+	<f:if condition="{validationResults.flattenedErrors}">
+		<div class="typo3-message message-error">
+			<h3>Bitte überprüfen Sie Ihre Eingabe</h3>
+			<ul class="errors">
+				<f:for each="{validationResults.flattenedErrors}" as="errors" key="propertyPath">
+					<f:for each="{errors}" as="error">
+						<li>
+							<h:translate key="error.{propertyPath}.{error.code}" />
+						</li>
+					</f:for>
+				</f:for>
+			</ul>
+		</div>
+	</f:if>
+</f:form.validationResults>

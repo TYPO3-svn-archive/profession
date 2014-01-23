@@ -1,4 +1,7 @@
 plugin.tx_profession.persistence.classes {
+	TYPO3\Profession\Domain\Model\StaticCountry {
+		mapping.tableName = static_countries
+	}
 	TYPO3\Profession\Domain\Model\AddressBase < plugin.tx_hdnet.persistence.classes.TYPO3\Hdnet\Domain\Model\Address
 	TYPO3\Profession\Domain\Model\AddressBase {
 		mapping {
@@ -27,6 +30,8 @@ plugin.tx_profession.persistence.classes {
     	}
 }
 
+### Move to general config
+config.tx_extbase.persistence.classes.TYPO3\Profession\Domain\Model\StaticCountry < plugin.tx_profession.persistence.classes.TYPO3\Profession\Domain\Model\StaticCountry
 config.tx_extbase.persistence.classes.TYPO3\Profession\Domain\Model\AddressBase < plugin.tx_profession.persistence.classes.TYPO3\Profession\Domain\Model\AddressBase
 config.tx_extbase.persistence.classes.TYPO3\Profession\Domain\Model\Company < plugin.tx_profession.persistence.classes.TYPO3\Profession\Domain\Model\Company
 config.tx_extbase.persistence.classes.TYPO3\Profession\Domain\Model\ContactPerson < plugin.tx_profession.persistence.classes.TYPO3\Profession\Domain\Model\ContactPerson
