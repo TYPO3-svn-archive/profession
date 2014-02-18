@@ -22,7 +22,7 @@
 				<label>
 					<h:translate key="application.gender">Gender:</h:translate>
 				</label>
-				<f:form.select property="gender" options="{1: 'Herr', 2: 'Frau'}" optionValueField="uid" prependOptionLabel=" " prependOptionValue="{gender}" class="text validate[required]" />
+				<f:form.select property="gender" options="{genders}" optionValueField="uid" prependOptionLabel=" " prependOptionValue="{gender}" class="text validate[required]"/>
 			</div>
 			<div class="lastname">
 				<label>
@@ -42,7 +42,7 @@
 				</label>
 				<f:form.textfield property="street" placeholder="{h:translate(key: 'application.street', default:'Please insert')}" value="{street}" class="text validate[required]"/>
 				<label>
-					<h:translate key="application.streetNumber"></h:translate>
+					<h:translate key="application.streetNumber" />
 				</label>
 				<f:form.textfield property="streetNumber" placeholder="{h:translate(key: 'application.streetNumberLabel', default:'Nr')}" value="{streetNumber}" class="text validate[required]"/>
 			</div>
@@ -62,7 +62,7 @@
 				<label>
 					<h:translate key="application.country">Country:</h:translate>
 				</label>
-				<f:form.select property="country" options="{}" optionValueField="uid" prependOptionLabel=" " prependOptionValue="{country}" class="text validate[required]"/>
+				<f:form.select property="country" options="{countries}" optionValueField="uid" prependOptionLabel=" " prependOptionValue="{country}" class="text validate[required]"/>
 			</div>
 			<div class="phone">
 				<label>

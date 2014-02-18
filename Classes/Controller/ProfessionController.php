@@ -10,11 +10,10 @@
 
 namespace TYPO3\Profession\Controller;
 
-use SJBR\StaticInfoTables\Utility\LocalizationUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\MathUtility;
-use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 use TYPO3\Hdnet\Controller\AbstractController;
+use TYPO3\Hdnet\Utility\TranslateUtility;
 use TYPO3\Profession\Domain\Model\Offer;
 use TYPO3\Profession\Domain\Model\Request\ApplicationRequest;
 use \TYPO3\Profession\Domain\Model\Request\FilterRequest;
@@ -102,6 +101,7 @@ class ProfessionController extends AbstractController {
 			}
 		}
 
+
 		$offerResult = $this->offerRepository->findBySearchWord($properties, $searchWord);
 
 		$this->assignCategoriesAndCities();
@@ -118,6 +118,7 @@ class ProfessionController extends AbstractController {
 		}
 		$applicationRequest->setOffer($offer);
 
+		$this->view->assign('genders', $this->getGender());
 		$this->view->assign('countries', $this->getCountries());
 		$this->view->assign('applicationRequest', $applicationRequest);
 	}
@@ -147,7 +148,6 @@ class ProfessionController extends AbstractController {
 	 * @view \TYPO3\Hdnet\View\MailView
 	 */
 	public function mailAction(ApplicationRequest $applicationRequest) {
-
 		$this->view->assign('to', array($this->getTargetEmailAddress() => 'Personalabteilung'));
 		$this->view->assign('from', array($applicationRequest->getEmail() => 'Bewerbung'));
 		$this->view->assign('subject', 'Bewerbung von ' . $applicationRequest->getLastname() . ', ' . $applicationRequest->getFirstname() . ' // ' . $applicationRequest->getOffer()
@@ -175,13 +175,25 @@ class ProfessionController extends AbstractController {
 	 *
 	 * @return array
 	 */
-	public function getCountries() {
+	protected function getCountries() {
 		$countries = $this->staticCountryRepository->findAll();
 		$countryNames = array();
+		/** @var \TYPO3\Profession\Domain\Model\StaticCountry $country */
 		foreach ($countries as $country) {
 			$countryNames[] .= $country->getCnShortLocal();
 		}
 		return $countryNames;
 	}
 
+	/**
+	 * Get locallang information for gender
+	 *
+	 * @return array
+	 */
+	protected function getGender() {
+		return array(
+			'1' => TranslateUtility::assureLabel('application.gender.w', 'Profession'),
+			'2' => TranslateUtility::assureLabel('application.gender.m', 'Profession')
+		);
+	}
 }

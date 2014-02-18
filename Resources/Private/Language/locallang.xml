@@ -7,12 +7,11 @@
 	<data type="array">
 		<languageKey index="default" type="array">
 
-
 			<label index="error.applicationRequest.gender.1221560718"><![CDATA[]]></label>
 			<label index="error.applicationRequest.email.1221559976"><![CDATA[Please check your e-mail.]]></label>
 			<label index="error.applicationRequest.email.5421563143265"><![CDATA[Please insert your e-mail.]]></label>
 			<label index="error.applicationRequest.phone.1221560718"><![CDATA[Please insert your phonenumber]]></label>
-			<label index="error.applicationRequest.country.1221560718"><![CDATA[Please select a country.]]></label>
+			<label index="error.applicationRequest.country.1221560910"><![CDATA[Please select a country.]]></label>
 			<label index="error.applicationRequest.city.1221560718"><![CDATA[Please insert your city.]]></label>
 			<label index="error.applicationRequest.streetNumber.1221560718"><![CDATA[Please insert your housenumber.]]></label>
 			<label index="error.applicationRequest.street.1221560718"><![CDATA[Please insert your street.]]></label>
@@ -73,7 +72,7 @@
 			<label index="error.applicationRequest.email.1221559976"><![CDATA[Bitte überprüfen Sie Ihre E-Mail-Adresse.]]></label>
 			<label index="error.applicationRequest.email.5421563143265"><![CDATA[Bitte tragen Sie Ihre E-Mail ein.]]></label>
 			<label index="error.applicationRequest.phone.1221560718"><![CDATA[Bitte tragen Sie Ihre Telefonnummer ein.]]></label>
-			<label index="error.applicationRequest.country.1221560718"><![CDATA[Bitte wählen Sie ein Land.]]></label>
+			<label index="error.applicationRequest.country.1221560910"><![CDATA[Bitte wählen Sie ein Land.]]></label>
 			<label index="error.applicationRequest.city.1221560718"><![CDATA[Bitte tragen Sie Ihre Stadt ein.]]></label>
 			<label index="error.applicationRequest.streetNumber.1221560718"><![CDATA[Bitte tragen Sie Ihre Hausnummer ein.]]></label>
 			<label index="error.applicationRequest.street.1221560718"><![CDATA[Bitte tragen Sie Ihre Straße ein.]]></label>
