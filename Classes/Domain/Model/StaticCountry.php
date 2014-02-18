@@ -10,6 +10,7 @@
  */
 
 namespace TYPO3\Profession\Domain\Model;
+use HDNET\Hdnet\Domain\Model\AbstractModel;
 
 /**
  * Static Country
@@ -19,7 +20,7 @@ namespace TYPO3\Profession\Domain\Model;
  * @author     Tim Lochmüller <tim.lochmueller@hdnet.de>
  * @todo auf static table info tables modelle umstellen.
  */
-class StaticCountry extends \TYPO3\Hdnet\Domain\Model\AbstractModel {
+class StaticCountry extends AbstractModel {
 
 	/**
 	 * ISO 2

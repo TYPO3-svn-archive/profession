@@ -10,8 +10,8 @@
  */
 
 namespace TYPO3\Profession\Domain\Model;
+use HDNET\Hdnet\Domain\Model\Address;
 
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * AddressBase Model
@@ -22,7 +22,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  * @author     Ercüment Topal <ercuement.topal@hdnet.de>
  * @db         tt_address
  */
-class AddressBase extends \TYPO3\Hdnet\Domain\Model\Address {
+class AddressBase extends Address {
 
 	/**
 	 * @var int

@@ -9,15 +9,15 @@
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
-use TYPO3\Hdnet\Service\PluginWizardService;
+use HDNET\Hdnet\Service\PluginWizardService;
 
 
 if (!defined('TYPO3_MODE')) {
 	die('Access denied.');
 }
 
-/** @var $autoLoader \TYPO3\Hdnet\Service\AutoLoaderService */
-$autoLoader = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\Hdnet\\Service\\AutoLoaderService', 'profession');
+/** @var $autoLoader \HDNET\Hdnet\Service\AutoLoaderService */
+$autoLoader = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('HDNET\\Hdnet\\Service\\AutoLoaderService', 'profession');
 $autoLoader->loadExtensionTables(array(
 	'CommandController',
 	'StaticTyposcript',

@@ -17,14 +17,25 @@ if (!defined('TYPO3_MODE')) {
 ;
 
 
-/** @var $autoLoader \TYPO3\Hdnet\Service\AutoLoaderService */
-$autoLoader = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\Hdnet\\Service\\AutoLoaderService', 'profession');
+
+/**
+ * Base
+ */
+/* @var $configuration \HDNET\Hdnet\Configuration */
+$configuration = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('HDNET\\Hdnet\\Configuration');
+
+$version = \TYPO3\CMS\Core\Utility\VersionNumberUtility::convertVersionNumberToInteger(\TYPO3\CMS\Core\Utility\VersionNumberUtility::getNumericTypo3Version());
+
+/** @var $autoLoader \HDNET\Hdnet\Service\AutoLoaderService */
+$autoLoader = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('HDNET\\Hdnet\\Service\\AutoLoaderService', 'hdnet');
 $autoLoader->loadExtensionConfiguration(array(
-	'CommandController',
-	'StaticTyposcript',
-	'FlexForms',
-	'ContentObjects',
+    'CommandController',
+    'StaticTyposcript',
+    'FlexForms',
+    'ContentObjects',
+    'SmartObjects',
 ));
+
 
 #if ($configuration->get('enable.functions.xingfield')) {
 $ttAddress = array(

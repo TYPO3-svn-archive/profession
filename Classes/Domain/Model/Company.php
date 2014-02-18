@@ -11,7 +11,7 @@
 
 namespace TYPO3\Profession\Domain\Model;
 
-use TYPO3\Hdnet\Domain\Model\Address;
+use HDNET\Hdnet\Domain\Model\Address;
 
 /**
  * Company Address Model

@@ -1,6 +1,6 @@
 <?php
 
-$extensionUtility = new \TYPO3\Hdnet\Service\ExtensionService();
+$extensionUtility = new \HDNET\Hdnet\Service\ExtensionService();
 $base = $extensionUtility->getTcaInformation('TYPO3\\Profession\\Domain\\Model\\Offer');
 
 $custom = array();
@@ -125,4 +125,4 @@ $custom = array(
 	)
 );
 
-return \TYPO3\Hdnet\Utility\ArrayUtility::mergeRecursiveDistinct($base, $custom);
+return \HDNET\Hdnet\Utility\ArrayUtility::mergeRecursiveDistinct($base, $custom);

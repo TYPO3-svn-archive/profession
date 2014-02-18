@@ -9,6 +9,7 @@
  */
 
 namespace TYPO3\Profession\Domain\Model\Request;
+use HDNET\Hdnet\Domain\Model\AbstractModel;
 
 /**
  * ApplicationRequest
@@ -17,7 +18,7 @@ namespace TYPO3\Profession\Domain\Model\Request;
  * @subpackage Domain/Model/Request
  * @author     Ercüment Topal <ercuement.topal@hdnet.de>
  */
-class ApplicationRequest extends \TYPO3\Hdnet\Domain\Model\AbstractModel{
+class ApplicationRequest extends AbstractModel{
 
 	/**
 	 * gender

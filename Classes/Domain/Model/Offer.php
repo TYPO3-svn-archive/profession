@@ -10,7 +10,7 @@
 
 namespace TYPO3\Profession\Domain\Model;
 
-use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
+use HDNET\Hdnet\Domain\Model\AbstractModel;
 
 /**
  * Offer
@@ -20,7 +20,9 @@ use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
  * @author     Ercüment Topal <ercuement.topal@hdnet.de>
  * @db
  */
-class Offer extends \TYPO3\Hdnet\Domain\Model\AbstractModel {
+
+
+class Offer extends AbstractModel {
 	/**
 	 * title
 	 *

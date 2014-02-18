@@ -10,7 +10,7 @@
 
 namespace TYPO3\Profession\Domain\Repository;
 
-use TYPO3\Hdnet\Service\GeoService;
+use HDNET\Hdnet\Service\GeoService;
 
 
 /**
