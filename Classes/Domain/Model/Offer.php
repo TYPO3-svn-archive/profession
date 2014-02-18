@@ -15,7 +15,7 @@ use HDNET\Hdnet\Domain\Model\AbstractModel;
 /**
  * Offer
  *
- * @package    Hdnet_career
+ * @package    Profession
  * @subpackage Domain/Moden
  * @author     Ercüment Topal <ercuement.topal@hdnet.de>
  * @db

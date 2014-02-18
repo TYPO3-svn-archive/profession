@@ -23,11 +23,9 @@ $autoLoader->loadExtensionTables(array(
 	'StaticTyposcript',
 	'FlexForms',
 	'ContentObjects',
+    'SmartObjects',
 ));
 
-// Register Smart models
-#\TYPO3\Hdnet\Utility\ExtensionUtility::registerSmartObject('TYPO3\\Hdnet\\Domain\\Model\\Queue');
-#\TYPO3\Hdnet\Utility\ExtensionUtility::registerSmartObject('TYPO3\\Hdnet\\Domain\\Model\\Test');
 
 // Register Plugin
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin($_EXTKEY, 'Profession', 'Profession Portal');
