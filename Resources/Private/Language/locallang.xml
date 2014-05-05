@@ -6,6 +6,8 @@
 	</meta>
 	<data type="array">
 		<languageKey index="default" type="array">
+			<label index="tx_profession_domain_model_addressbase.longitude"><![CDATA[longitude]]></label>
+			<label index="tx_profession_domain_model_addressbase.latitude"><![CDATA[latitude]]></label>
 
 			<label index="error.applicationRequest.gender.1221560718"><![CDATA[]]></label>
 			<label index="error.applicationRequest.email.1221559976"><![CDATA[Please check your e-mail.]]></label>

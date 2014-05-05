@@ -8,7 +8,7 @@
  * @author     Ercüment Topal <ercuement.topal@hdnet.de>
  */
 
-namespace TYPO3\Profession\Domain\Model\Request;
+namespace HDNET\Profession\Domain\Model\Request;
 use HDNET\Hdnet\Domain\Model\AbstractModel;
 
 /**

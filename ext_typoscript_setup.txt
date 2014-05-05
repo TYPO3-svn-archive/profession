@@ -2,13 +2,13 @@ plugin.tx_profession.persistence.classes {
 	TYPO3\Profession\Domain\Model\StaticCountry {
 		mapping.tableName = static_countries
 	}
-	TYPO3\Profession\Domain\Model\AddressBase < plugin.tx_hdnet.persistence.classes.TYPO3\Hdnet\Domain\Model\Address
+	TYPO3\Profession\Domain\Model\AddressBase < plugin.tx_hdnet.persistence.classes.HDNET\Hdnet\Domain\Model\Address
 	TYPO3\Profession\Domain\Model\AddressBase {
 		mapping {
 			tableName = tt_address
 		}
 	}
-	TYPO3\Profession\Domain\Model\Company < plugin.tx_hdnet.persistence.classes.TYPO3\Hdnet\Domain\Model\Address
+	TYPO3\Profession\Domain\Model\Company < plugin.tx_hdnet.persistence.classes.HDNET\Hdnet\Domain\Model\Address
 	TYPO3\Profession\Domain\Model\Company {
 		mapping {
 			# TYPO3\Profession\Domain\Model\Company::RECORD_TYPE
@@ -18,7 +18,7 @@ plugin.tx_profession.persistence.classes {
 			}
 		}
 	}
-	TYPO3\Profession\Domain\Model\ContactPerson < plugin.tx_hdnet.persistence.classes.TYPO3\Hdnet\Domain\Model\Address
+	TYPO3\Profession\Domain\Model\ContactPerson < plugin.tx_hdnet.persistence.classes.HDNET\Hdnet\Domain\Model\Address
     	TYPO3\Profession\Domain\Model\ContactPerson {
     		mapping {
     			# TYPO3\Profession\Domain\Model\ContactPerson::RECORD_TYPE

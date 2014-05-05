@@ -1,7 +1,7 @@
 <?php
 
 $extensionUtility = new \HDNET\Hdnet\Service\ExtensionService();
-$base = $extensionUtility->getTcaInformation('TYPO3\\Profession\\Domain\\Model\\Offer');
+$base = $extensionUtility->getTcaInformation('HDNET\\Profession\\Domain\\Model\\Offer');
 
 $custom = array();
 

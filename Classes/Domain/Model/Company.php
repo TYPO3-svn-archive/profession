@@ -9,7 +9,7 @@
  * @author     Ercüment Topal <ercuement.topal@hdnet.de>
  */
 
-namespace TYPO3\Profession\Domain\Model;
+namespace HDNET\Profession\Domain\Model;
 
 use HDNET\Hdnet\Domain\Model\Address;
 

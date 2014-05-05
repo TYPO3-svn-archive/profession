@@ -8,7 +8,7 @@
  * @author     Ercüment Topal <ercuement.topal@hdnet.de>
  */
 
-namespace TYPO3\Profession\Domain\Model;
+namespace HDNET\Profession\Domain\Model;
 
 use HDNET\Hdnet\Domain\Model\AbstractModel;
 
@@ -20,8 +20,6 @@ use HDNET\Hdnet\Domain\Model\AbstractModel;
  * @author     Ercüment Topal <ercuement.topal@hdnet.de>
  * @db
  */
-
-
 class Offer extends AbstractModel {
 	/**
 	 * title
@@ -72,19 +70,19 @@ class Offer extends AbstractModel {
 	protected $availabilityNow;
 
 	/**
-	 * @var \TYPO3\Hdnet\Domain\Model\Address
+	 * @var \HDNET\Hdnet\Domain\Model\Address
 	 * @db int(11) DEFAULT NULL
 	 */
 	protected $contactPerson;
 
 	/**
-	 * @var \TYPO3\Hdnet\Domain\Model\Address
+	 * @var \HDNET\Hdnet\Domain\Model\Address
 	 * @db int(11) DEFAULT NULL
 	 */
 	protected $location;
 
 	/**
-	 * @var \TYPO3\Profession\Domain\Model\Type
+	 * @var \HDNET\Profession\Domain\Model\Type
 	 * @db int(11) DEFAULT NULL
 	 */
 	protected $type;
@@ -124,14 +122,14 @@ class Offer extends AbstractModel {
 	}
 
 	/**
-	 * @param \TYPO3\Hdnet\Domain\Model\Address $contactPerson
+	 * @param \HDNET\Hdnet\Domain\Model\Address $contactPerson
 	 */
 	public function setContactPerson($contactPerson) {
 		$this->contactPerson = $contactPerson;
 	}
 
 	/**
-	 * @return \TYPO3\Hdnet\Domain\Model\Address
+	 * @return \HDNET\Hdnet\Domain\Model\Address
 	 */
 	public function getContactPerson() {
 		return $this->contactPerson;
@@ -166,14 +164,14 @@ class Offer extends AbstractModel {
 	}
 
 	/**
-	 * @param \TYPO3\Hdnet\Domain\Model\Address $location
+	 * @param \HDNET\Hdnet\Domain\Model\Address $location
 	 */
 	public function setLocation($location) {
 		$this->location = $location;
 	}
 
 	/**
-	 * @return \TYPO3\Hdnet\Domain\Model\Address
+	 * @return \HDNET\Hdnet\Domain\Model\Address
 	 */
 	public function getLocation() {
 		return $this->location;
@@ -208,14 +206,14 @@ class Offer extends AbstractModel {
 	}
 
 	/**
-	 * @param \TYPO3\Profession\Domain\Model\Type $type
+	 * @param \HDNET\Profession\Domain\Model\Type $type
 	 */
 	public function setType($type) {
 		$this->type = $type;
 	}
 
 	/**
-	 * @return \TYPO3\Profession\Domain\Model\Type
+	 * @return \HDNET\Profession\Domain\Model\Type
 	 */
 	public function getType() {
 		return $this->type;
@@ -234,7 +232,4 @@ class Offer extends AbstractModel {
 	public function getWhatWeOffer() {
 		return $this->whatWeOffer;
 	}
-
-
-
 }

@@ -8,11 +8,9 @@
  * @author     Ercüment TOpal <ercuement.topal@hdnet.de>
  */
 
-namespace TYPO3\Profession\Validation\Validator;
+namespace HDNET\Profession\Validation\Validator;
 
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
-use TYPO3\CMS\Extbase\Validation\Validator\AbstractValidator;
 use TYPO3\CMS\Extbase\Validation\Validator\EmailAddressValidator;
 
 /**

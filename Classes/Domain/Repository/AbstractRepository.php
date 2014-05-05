@@ -8,7 +8,7 @@
  * @author     Ercüment Topal <ercuement.topal@hdnet.de>
  */
 
-namespace TYPO3\Profession\Domain\Repository;
+namespace HDNET\Profession\Domain\Repository;
 
 
 /**
@@ -18,7 +18,7 @@ namespace TYPO3\Profession\Domain\Repository;
  * @subpackage Domain/Repository
  * @author     Ercüment Topal <ercuement.topal@hdnet.de>
  */
-class AbstractRepository extends \TYPO3\Hdnet\Domain\Repository\AbstractRepository {
+class AbstractRepository extends \HDNET\Hdnet\Domain\Repository\AbstractRepository {
 
 	/**
 	 * Get a clean query

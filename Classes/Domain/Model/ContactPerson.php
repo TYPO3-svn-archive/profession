@@ -9,7 +9,7 @@
  * @author     Ercüment Topal <ercuement.topal@hdnet.de>
  */
 
-namespace TYPO3\Profession\Domain\Model;
+namespace HDNET\Profession\Domain\Model;
 
 use HDNET\Hdnet\Domain\Model\Address;
 
@@ -29,20 +29,20 @@ class ContactPerson extends Address {
 	const RECORD_TYPE = 2;
 
 	/**
-	 * @var \TYPO3\Profession\Domain\Model\Company
+	 * @var \HDNET\Profession\Domain\Model\Company
 	 * @db text
 	 */
 	protected $employeeCompany;
 
 	/**
-	 * @param \TYPO3\Profession\Domain\Model\Company $employeeCompany
+	 * @param \HDNET\Profession\Domain\Model\Company $employeeCompany
 	 */
 	public function setEmployeeCompany($employeeCompany) {
 		$this->employeeCompany = $employeeCompany;
 	}
 
 	/**
-	 * @return \TYPO3\Profession\Domain\Model\Company
+	 * @return \HDNET\Profession\Domain\Model\Company
 	 */
 	public function getEmployeeCompany() {
 		return $this->company;

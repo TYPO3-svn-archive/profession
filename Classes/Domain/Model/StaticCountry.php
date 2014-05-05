@@ -9,7 +9,7 @@
  * @author     Tim Lochmüller <tim.lochmueller@hdnet.de>
  */
 
-namespace TYPO3\Profession\Domain\Model;
+namespace HDNET\Profession\Domain\Model;
 use HDNET\Hdnet\Domain\Model\AbstractModel;
 
 /**

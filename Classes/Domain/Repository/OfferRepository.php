@@ -8,9 +8,8 @@
  * @author     Ercüment Topal <ercuement.topal@hdnet.de>
  */
 
-namespace TYPO3\Profession\Domain\Repository;
+namespace HDNET\Profession\Domain\Repository;
 
-use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
 
 /**
@@ -23,11 +22,11 @@ use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 class OfferRepository extends AbstractRepository {
 
 	/**
-	 * @param \TYPO3\Profession\Domain\Model\Request\FilterRequest $filterRequest
+	 * @param \HDNET\Profession\Domain\Model\Request\FilterRequest $filterRequest
 	 *
 	 * @return array|\TYPO3\CMS\Extbase\Persistence\QueryResultInterface
 	 */
-	public function findByRequest(\TYPO3\Profession\Domain\Model\Request\FilterRequest $filterRequest) {
+	public function findByRequest(\HDNET\Profession\Domain\Model\Request\FilterRequest $filterRequest) {
 		$query = $this->createQuery();
 		$constraints = array();
 

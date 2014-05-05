@@ -9,7 +9,7 @@
  * @author     Tim Lochmüller <tim.lochmueller@hdnet.de>
  */
 
-namespace TYPO3\Profession\Domain\Repository;
+namespace HDNET\Profession\Domain\Repository;
 
 /**
  * Static Country Repository
