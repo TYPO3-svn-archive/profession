@@ -96,14 +96,14 @@ class ApplicationRequest extends AbstractModel{
 	 * email
 	 *
 	 * @var string
-	 * @validate TYPO3\Profession\Validation\Validator\MailValidator
+	 * @validate HDNET\Profession\Validation\Validator\MailValidator
 	 */
 	protected $email;
 
 	/**
 	 * offer
 	 *
-	 * @var \TYPO3\Profession\Domain\Model\Offer
+	 * @var \HDNET\Profession\Domain\Model\Offer
 	 */
 	protected $offer;
 
@@ -267,14 +267,14 @@ class ApplicationRequest extends AbstractModel{
 	}
 
 	/**
-	 * @param \TYPO3\Profession\Domain\Model\Offer $offer
+	 * @param \HDNET\Profession\Domain\Model\Offer $offer
 	 */
 	public function setOffer($offer) {
 		$this->offer = $offer;
 	}
 
 	/**
-	 * @return \TYPO3\Profession\Domain\Model\Offer
+	 * @return \HDNET\Profession\Domain\Model\Offer
 	 */
 	public function getOffer() {
 		return $this->offer;

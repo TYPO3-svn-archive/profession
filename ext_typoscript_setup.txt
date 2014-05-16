@@ -1,15 +1,15 @@
 plugin.tx_profession.persistence.classes {
-	TYPO3\Profession\Domain\Model\StaticCountry {
+	HDNET\Profession\Domain\Model\StaticCountry {
 		mapping.tableName = static_countries
 	}
-	TYPO3\Profession\Domain\Model\AddressBase < plugin.tx_hdnet.persistence.classes.HDNET\Hdnet\Domain\Model\Address
-	TYPO3\Profession\Domain\Model\AddressBase {
+	HDNET\Profession\Domain\Model\AddressBase < plugin.tx_hdnet.persistence.classes.HDNET\Hdnet\Domain\Model\Address
+	HDNET\Profession\Domain\Model\AddressBase {
 		mapping {
 			tableName = tt_address
 		}
 	}
-	TYPO3\Profession\Domain\Model\Company < plugin.tx_hdnet.persistence.classes.HDNET\Hdnet\Domain\Model\Address
-	TYPO3\Profession\Domain\Model\Company {
+	HDNET\Profession\Domain\Model\Company < plugin.tx_hdnet.persistence.classes.HDNET\Hdnet\Domain\Model\Address
+	HDNET\Profession\Domain\Model\Company {
 		mapping {
 			# TYPO3\Profession\Domain\Model\Company::RECORD_TYPE
 			recordType = 1
@@ -18,8 +18,8 @@ plugin.tx_profession.persistence.classes {
 			}
 		}
 	}
-	TYPO3\Profession\Domain\Model\ContactPerson < plugin.tx_hdnet.persistence.classes.HDNET\Hdnet\Domain\Model\Address
-    	TYPO3\Profession\Domain\Model\ContactPerson {
+	HDNET\Profession\Domain\Model\ContactPerson < plugin.tx_hdnet.persistence.classes.HDNET\Hdnet\Domain\Model\Address
+    	HDNET\Profession\Domain\Model\ContactPerson {
     		mapping {
     			# TYPO3\Profession\Domain\Model\ContactPerson::RECORD_TYPE
     			recordType = 2
@@ -31,7 +31,7 @@ plugin.tx_profession.persistence.classes {
 }
 
 ### Move to general config
-config.tx_extbase.persistence.classes.TYPO3\Profession\Domain\Model\StaticCountry < plugin.tx_profession.persistence.classes.TYPO3\Profession\Domain\Model\StaticCountry
-config.tx_extbase.persistence.classes.TYPO3\Profession\Domain\Model\AddressBase < plugin.tx_profession.persistence.classes.TYPO3\Profession\Domain\Model\AddressBase
-config.tx_extbase.persistence.classes.TYPO3\Profession\Domain\Model\Company < plugin.tx_profession.persistence.classes.TYPO3\Profession\Domain\Model\Company
-config.tx_extbase.persistence.classes.TYPO3\Profession\Domain\Model\ContactPerson < plugin.tx_profession.persistence.classes.TYPO3\Profession\Domain\Model\ContactPerson
+config.tx_extbase.persistence.classes.HDNET\Profession\Domain\Model\StaticCountry < plugin.tx_profession.persistence.classes.HDNET\Profession\Domain\Model\StaticCountry
+config.tx_extbase.persistence.classes.HDNET\Profession\Domain\Model\AddressBase < plugin.tx_profession.persistence.classes.HDNET\Profession\Domain\Model\AddressBase
+config.tx_extbase.persistence.classes.HDNET\Profession\Domain\Model\Company < plugin.tx_profession.persistence.classes.HDNET\Profession\Domain\Model\Company
+config.tx_extbase.persistence.classes.HDNET\Profession\Domain\Model\ContactPerson < plugin.tx_profession.persistence.classes.HDNET\Profession\Domain\Model\ContactPerson

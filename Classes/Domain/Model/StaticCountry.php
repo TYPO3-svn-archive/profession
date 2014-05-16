@@ -11,6 +11,7 @@
 
 namespace HDNET\Profession\Domain\Model;
 use HDNET\Hdnet\Domain\Model\AbstractModel;
+use SJBR\StaticInfoTables\Domain\Model\Country;
 
 /**
  * Static Country
@@ -18,9 +19,9 @@ use HDNET\Hdnet\Domain\Model\AbstractModel;
  * @package    Profession
  * @subpackage Domain\Model
  * @author     Tim Lochmüller <tim.lochmueller@hdnet.de>
- * @todo auf static table info tables modelle umstellen.
+ * @todo auf static info tables modelle umstellen.
  */
-class StaticCountry extends AbstractModel {
+class StaticCountry extends Country {
 
 	/**
 	 * ISO 2

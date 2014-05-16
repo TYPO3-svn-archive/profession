@@ -11,6 +11,8 @@
 
 namespace HDNET\Profession\Domain\Repository;
 
+use SJBR\StaticInfoTables\Domain\Repository\CountryRepository;
+
 /**
  * Static Country Repository
  *
@@ -18,6 +20,6 @@ namespace HDNET\Profession\Domain\Repository;
  * @subpackage Domain\Repository
  * @author     Ercüment Topal <ercuement.topal@hdnet.de>
  */
-class StaticCountryRepository extends AbstractRepository {
+class StaticCountryRepository extends CountryRepository {
 
 }

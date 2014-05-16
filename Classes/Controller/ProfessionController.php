@@ -8,15 +8,15 @@
  * @author     Ercüment Topal <ercuement.topal@hdnet.de>
  */
 
-namespace TYPO3\Profession\Controller;
+namespace HDNET\Profession\Controller;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\MathUtility;
-use TYPO3\Hdnet\Controller\AbstractController;
-use TYPO3\Hdnet\Utility\TranslateUtility;
-use TYPO3\Profession\Domain\Model\Offer;
-use TYPO3\Profession\Domain\Model\Request\ApplicationRequest;
-use \TYPO3\Profession\Domain\Model\Request\FilterRequest;
+use HDNET\Hdnet\Controller\AbstractController;
+use HDNET\Hdnet\Utility\TranslateUtility;
+use HDNET\Profession\Domain\Model\Offer;
+use HDNET\Profession\Domain\Model\Request\ApplicationRequest;
+use HDNET\Profession\Domain\Model\Request\FilterRequest;
 
 /**
  * CareerController
@@ -28,25 +28,25 @@ use \TYPO3\Profession\Domain\Model\Request\FilterRequest;
 class ProfessionController extends AbstractController {
 
 	/**
-	 * @var \TYPO3\Profession\Domain\Repository\OfferRepository
+	 * @var \HDNET\Profession\Domain\Repository\OfferRepository
 	 * @inject
 	 */
 	protected $offerRepository;
 
 	/**
-	 * @var \TYPO3\Profession\Domain\Repository\TypeRepository
+	 * @var \HDNET\Profession\Domain\Repository\TypeRepository
 	 * @inject
 	 */
 	protected $typeRepository;
 
 	/**
-	 * @var \TYPO3\Profession\Domain\Repository\CompanyRepository
+	 * @var \HDNET\Profession\Domain\Repository\CompanyRepository
 	 * @inject
 	 */
 	protected $companyRepository;
 
 	/**
-	 * @var \TYPO3\Profession\Domain\Repository\StaticCountryRepository
+	 * @var \HDNET\Profession\Domain\Repository\StaticCountryRepository
 	 * @inject
 	 */
 	protected $staticCountryRepository;
@@ -145,7 +145,7 @@ class ProfessionController extends AbstractController {
 	 *
 	 * @param ApplicationRequest $applicationRequest
 	 *
-	 * @view \TYPO3\Hdnet\View\MailView
+	 * @view \HDNET\Hdnet\View\MailView
 	 */
 	public function mailAction(ApplicationRequest $applicationRequest) {
 		$this->view->assign('to', array($this->getTargetEmailAddress() => 'Personalabteilung'));
@@ -178,7 +178,7 @@ class ProfessionController extends AbstractController {
 	protected function getCountries() {
 		$countries = $this->staticCountryRepository->findAll();
 		$countryNames = array();
-		/** @var \TYPO3\Profession\Domain\Model\StaticCountry $country */
+		/** @var \HDNET\Profession\Domain\Model\StaticCountry $country */
 		foreach ($countries as $country) {
 			$countryNames[] .= $country->getCnShortLocal();
 		}
