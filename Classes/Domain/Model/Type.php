@@ -22,7 +22,7 @@ use HDNET\Hdnet\Domain\Model\AbstractModel;
 class Type extends AbstractModel {
 
 	/**
-	 * title
+	 * Type
 	 *
 	 * @var string
 	 * @db
@@ -30,7 +30,7 @@ class Type extends AbstractModel {
 	protected $type;
 
 	/**
-	 * description
+	 * Description
 	 *
 	 * @var string
 	 * @db
@@ -38,6 +38,8 @@ class Type extends AbstractModel {
 	protected $description;
 
 	/**
+	 * Set type
+	 *
 	 * @param string $type
 	 */
 	public function setType($type) {
@@ -45,15 +47,17 @@ class Type extends AbstractModel {
 	}
 
 	/**
+	 * Get type
+	 *
 	 * @return string
 	 */
 	public function getType() {
 		return $this->type;
 	}
 
-
-
 	/**
+	 * Set description
+	 *
 	 * @param string $description
 	 */
 	public function setDescription($description) {
@@ -61,6 +65,8 @@ class Type extends AbstractModel {
 	}
 
 	/**
+	 * Get description
+	 *
 	 * @return string
 	 */
 	public function getDescription() {

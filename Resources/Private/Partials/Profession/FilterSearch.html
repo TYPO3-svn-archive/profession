@@ -6,24 +6,7 @@
 </ul>
 
 <div class="search" style="margin-bottom: 20px">
-	<H2>Volltextsuche</H2>
-
-	<div class="full" style="height:95px; width:100%; background-color:lime;">
-		<fieldset>
-			<h3>
-				<f:translate key="searchfield.fullSearch">Text search:</f:translate>
-			</h3>
-			<f:form action="search">
-				<f:form.textfield name="searchWord" value="{searchWord}" placeholder="{f:translate(key: 'searchfield.searchWordLabel', default:'search')}" />
-				<br /><br />
-				<f:form.submit name="seach" value="{f:translate(key: 'searchfield.searchSubmit', default:'search')}" />
-			</f:form>
-		</fieldset>
-	</div>
-	<br />
-
 	<H2>Filtersuche</H2>
-
 	<div class="category" style="height:280px; width:100%; background-color:lime;">
 		<fieldset>
 			<f:form action="filter" object="{request}" objectName="filterRequest" id="filterRequest">

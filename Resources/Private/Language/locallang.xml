@@ -6,8 +6,17 @@
 	</meta>
 	<data type="array">
 		<languageKey index="default" type="array">
-			<label index="tx_profession_domain_model_addressbase.longitude"><![CDATA[longitude]]></label>
-			<label index="tx_profession_domain_model_addressbase.latitude"><![CDATA[latitude]]></label>
+			<label index="tx_profession_domain_model_candidatetype.job_types"><![CDATA[job_types]]></label>
+
+			<label index="tx_profession_domain_model_candidatetype"><![CDATA[Candidate Type]]></label>
+			<label index="tx_profession_domain_model_candidatetype.title"><![CDATA[title]]></label>
+			<label index="tx_profession_domain_model_candidatetype.image"><![CDATA[Please select one picture]]></label>
+			<label index="tx_profession_domain_model_candidatetype.description"><![CDATA[Description]]></label>
+			<label index="tx_profession_domain_model_candidatetype.types"><![CDATA[Job types]]></label>
+
+			<label index="tt_content.profession.header"><![CDATA[profession (Header)]]></label>
+			<label index="tx_profession_domain_model_addressbase.longitude"><![CDATA[Longitude]]></label>
+			<label index="tx_profession_domain_model_addressbase.latitude"><![CDATA[Latitude]]></label>
 
 			<label index="error.applicationRequest.gender.1221560718"><![CDATA[]]></label>
 			<label index="error.applicationRequest.email.1221559976"><![CDATA[Please check your e-mail.]]></label>
@@ -67,8 +76,23 @@
 			<label index="application.gender.w"><![CDATA[Mrs]]></label>
 			<label index="application.gender.m"><![CDATA[Mr]]></label>
 
+			<label index="candidate.about"><![CDATA[What kind of work you look for?]]></label>
+			<label index="candidate.iam"><![CDATA[I am]]></label>
+
 		</languageKey>
 		<languageKey index="de" type="array">
+
+
+
+			<label index="tx_profession_domain_model_candidatetype"><![CDATA[Bewerbertyp]]></label>
+			<label index="tx_profession_domain_model_candidatetype.title"><![CDATA[Titel]]></label>
+			<label index="tx_profession_domain_model_candidatetype.image"><![CDATA[Bitte wählen sie ein Bild]]></label>
+			<label index="tx_profession_domain_model_candidatetype.description"><![CDATA[Beschreibung]]></label>
+			<label index="tx_profession_domain_model_candidatetype.types"><![CDATA[Jobtypen]]></label>
+
+			<label index="tt_content.profession.header"><![CDATA[profession (Header)]]></label>
+			<label index="tx_profession_domain_model_addressbase.longitude"><![CDATA[Längengrad]]></label>
+			<label index="tx_profession_domain_model_addressbase.latitude"><![CDATA[Breitengrad]]></label>
 
 			<label index="error.applicationRequest.gender.1221560718"><![CDATA[Bitte wählen Sie Ihre Anrede.]]></label>
 			<label index="error.applicationRequest.email.1221559976"><![CDATA[Bitte überprüfen Sie Ihre E-Mail-Adresse.]]></label>
@@ -126,6 +150,9 @@
 			<label index="application.Message"><![CDATA[Nachricht]]></label>
 			<label index="application.gender.w"><![CDATA[Frau]]></label>
 			<label index="application.gender.m"><![CDATA[Herr]]></label>
+
+			<label index="candidate.about"><![CDATA[Worüber möchtest du dich informieren?]]></label>
+			<label index="candidate.iam"><![CDATA[Ich bin]]></label>
 
 		</languageKey>
 	</data>

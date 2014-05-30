@@ -25,23 +25,31 @@ use HDNET\Hdnet\Domain\Model\Address;
 class AddressBase extends Address {
 
 	/**
+	 * RecordType
+	 *
 	 * @var int
 	 */
 	protected $recordType;
 
 	/**
+	 * Latitude
+	 *
 	 * @var float
 	 * @db varchar(255) DEFAULT '' NOT NULL
 	 */
 	protected $latitude;
 
 	/**
+	 * Longitude
+	 *
 	 * @var float
 	 * @db varchar(255) DEFAULT '' NOT NULL
 	 */
 	protected $longitude;
 
 	/**
+	 * Set latitude
+	 *
 	 * @param float $latitude
 	 */
 	public function setLatitude($latitude) {
@@ -49,6 +57,8 @@ class AddressBase extends Address {
 	}
 
 	/**
+	 * Get latitude
+	 *
 	 * @return float
 	 */
 	public function getLatitude() {
@@ -56,6 +66,8 @@ class AddressBase extends Address {
 	}
 
 	/**
+	 * Set longitude
+	 *
 	 * @param float $longitude
 	 */
 	public function setLongitude($longitude) {
@@ -63,6 +75,8 @@ class AddressBase extends Address {
 	}
 
 	/**
+	 * Get longitude
+	 *
 	 * @return float
 	 */
 	public function getLongitude() {
@@ -70,6 +84,8 @@ class AddressBase extends Address {
 	}
 
 	/**
+	 * Set record type
+	 *
 	 * @param int $recordType
 	 */
 	public function setRecordType($recordType) {
@@ -77,6 +93,8 @@ class AddressBase extends Address {
 	}
 
 	/**
+	 * Get record type
+	 *
 	 * @return int
 	 */
 	public function getRecordType() {

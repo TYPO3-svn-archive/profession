@@ -26,6 +26,18 @@
 					</config>
 				</TCEforms>
 			</settings.emailAddress>
+			<settings.candidateType>
+				<TCEforms>
+					<label>Select Candidate Types</label>
+					<config>
+						<type>select</type>
+						<foreign_table>tx_profession_domain_model_candidatetype</foreign_table>
+						<minitems>1</minitems>
+						<maxitems>100</maxitems>
+						<size>5</size>
+					</config>
+				</TCEforms>
+			</settings.candidateType>
 		</el>
 	</ROOT>
 </T3DataStructure>

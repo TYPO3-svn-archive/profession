@@ -21,8 +21,9 @@ use HDNET\Hdnet\Domain\Model\AbstractModel;
  * @db
  */
 class Offer extends AbstractModel {
+
 	/**
-	 * title
+	 * Title
 	 *
 	 * @var string
 	 * @db
@@ -30,7 +31,23 @@ class Offer extends AbstractModel {
 	protected $title;
 
 	/**
-	 * jobChallenge
+	 * SubTitle
+	 *
+	 * @var string
+	 * @db
+	 */
+	protected $subTitle;
+
+	/**
+	 * Description
+	 *
+	 * @var string
+	 * @db
+	 */
+	protected $description;
+
+	/**
+	 * JobChallenge
 	 *
 	 * @var string
 	 * @db
@@ -38,7 +55,7 @@ class Offer extends AbstractModel {
 	protected $jobChallenge;
 
 	/**
-	 * applicantProfile
+	 * ApplicantProfile
 	 *
 	 * @var string
 	 * @db
@@ -46,7 +63,7 @@ class Offer extends AbstractModel {
 	protected $applicantProfile;
 
 	/**
-	 * whatWeOffer
+	 * WhatWeOffer
 	 *
 	 * @var string
 	 * @db
@@ -54,7 +71,7 @@ class Offer extends AbstractModel {
 	protected $whatWeOffer;
 
 	/**
-	 * start date
+	 * Start date
 	 *
 	 * @var \DateTime
 	 * @db
@@ -70,30 +87,40 @@ class Offer extends AbstractModel {
 	protected $availabilityNow;
 
 	/**
+	 * Contact person
+	 *
 	 * @var \HDNET\Hdnet\Domain\Model\Address
 	 * @db int(11) DEFAULT NULL
 	 */
 	protected $contactPerson;
 
 	/**
+	 * Location
+	 *
 	 * @var \HDNET\Hdnet\Domain\Model\Address
 	 * @db int(11) DEFAULT NULL
 	 */
 	protected $location;
 
 	/**
+	 * Type
+	 *
 	 * @var \HDNET\Profession\Domain\Model\Type
-	 * @db int(11) DEFAULT NULL
+	 * @db text
 	 */
 	protected $type;
 
 	/**
+	 * Data
+	 *
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
 	 * @db
 	 */
 	protected $data;
 
 	/**
+	 * Set applicant profile
+	 *
 	 * @param string $applicantProfile
 	 */
 	public function setApplicantProfile($applicantProfile) {
@@ -101,6 +128,8 @@ class Offer extends AbstractModel {
 	}
 
 	/**
+	 * Get applicant profile
+	 *
 	 * @return string
 	 */
 	public function getApplicantProfile() {
@@ -108,6 +137,8 @@ class Offer extends AbstractModel {
 	}
 
 	/**
+	 * Set availability
+	 *
 	 * @param boolean $availabilityNow
 	 */
 	public function setAvailabilityNow($availabilityNow) {
@@ -115,6 +146,8 @@ class Offer extends AbstractModel {
 	}
 
 	/**
+	 * Get availability
+	 *
 	 * @return boolean
 	 */
 	public function getAvailabilityNow() {
@@ -122,6 +155,8 @@ class Offer extends AbstractModel {
 	}
 
 	/**
+	 * Set contact person
+	 *
 	 * @param \HDNET\Hdnet\Domain\Model\Address $contactPerson
 	 */
 	public function setContactPerson($contactPerson) {
@@ -129,6 +164,8 @@ class Offer extends AbstractModel {
 	}
 
 	/**
+	 * Get contact person
+	 *
 	 * @return \HDNET\Hdnet\Domain\Model\Address
 	 */
 	public function getContactPerson() {
@@ -136,6 +173,8 @@ class Offer extends AbstractModel {
 	}
 
 	/**
+	 * Set Data
+	 *
 	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $data
 	 */
 	public function setData($data) {
@@ -143,6 +182,8 @@ class Offer extends AbstractModel {
 	}
 
 	/**
+	 * Get data
+	 *
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
 	public function getData() {
@@ -150,6 +191,8 @@ class Offer extends AbstractModel {
 	}
 
 	/**
+	 * Set job challenge
+	 *
 	 * @param string $jobChallenge
 	 */
 	public function setJobChallenge($jobChallenge) {
@@ -157,6 +200,8 @@ class Offer extends AbstractModel {
 	}
 
 	/**
+	 * Get job challenge
+	 *
 	 * @return string
 	 */
 	public function getJobChallenge() {
@@ -164,6 +209,8 @@ class Offer extends AbstractModel {
 	}
 
 	/**
+	 * Set location
+	 *
 	 * @param \HDNET\Hdnet\Domain\Model\Address $location
 	 */
 	public function setLocation($location) {
@@ -171,6 +218,8 @@ class Offer extends AbstractModel {
 	}
 
 	/**
+	 * Get location
+	 *
 	 * @return \HDNET\Hdnet\Domain\Model\Address
 	 */
 	public function getLocation() {
@@ -178,6 +227,8 @@ class Offer extends AbstractModel {
 	}
 
 	/**
+	 * Set startdate
+	 *
 	 * @param \DateTime $startDate
 	 */
 	public function setStartDate($startDate) {
@@ -185,6 +236,8 @@ class Offer extends AbstractModel {
 	}
 
 	/**
+	 * Get startdate
+	 *
 	 * @return \DateTime
 	 */
 	public function getStartDate() {
@@ -192,6 +245,8 @@ class Offer extends AbstractModel {
 	}
 
 	/**
+	 * Set title
+	 *
 	 * @param string $title
 	 */
 	public function setTitle($title) {
@@ -199,6 +254,8 @@ class Offer extends AbstractModel {
 	}
 
 	/**
+	 * Get title
+	 *
 	 * @return string
 	 */
 	public function getTitle() {
@@ -206,6 +263,8 @@ class Offer extends AbstractModel {
 	}
 
 	/**
+	 * Set type
+	 *
 	 * @param \HDNET\Profession\Domain\Model\Type $type
 	 */
 	public function setType($type) {
@@ -213,6 +272,8 @@ class Offer extends AbstractModel {
 	}
 
 	/**
+	 * Get type
+	 *
 	 * @return \HDNET\Profession\Domain\Model\Type
 	 */
 	public function getType() {
@@ -220,6 +281,8 @@ class Offer extends AbstractModel {
 	}
 
 	/**
+	 * Set what we offer
+	 *
 	 * @param string $whatWeOffer
 	 */
 	public function setWhatWeOffer($whatWeOffer) {
@@ -227,9 +290,48 @@ class Offer extends AbstractModel {
 	}
 
 	/**
+	 * Get what we offer
+	 *
 	 * @return string
 	 */
 	public function getWhatWeOffer() {
 		return $this->whatWeOffer;
 	}
+
+	/**
+	 * Set description
+	 *
+	 * @param string $description
+	 */
+	public function setDescription($description) {
+		$this->description = $description;
+	}
+
+	/**
+	 * Get description
+	 *
+	 * @return string
+	 */
+	public function getDescription() {
+		return $this->description;
+	}
+
+	/**
+	 * Set subtitle
+	 *
+	 * @param string $subTitle
+	 */
+	public function setSubTitle($subTitle) {
+		$this->subTitle = $subTitle;
+	}
+
+	/**
+	 * Get subtitle
+	 *
+	 * @return string
+	 */
+	public function getSubTitle() {
+		return $this->subTitle;
+	}
+
 }

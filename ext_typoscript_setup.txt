@@ -1,37 +1,25 @@
-plugin.tx_profession.persistence.classes {
-	HDNET\Profession\Domain\Model\StaticCountry {
-		mapping.tableName = static_countries
-	}
-	HDNET\Profession\Domain\Model\AddressBase < plugin.tx_hdnet.persistence.classes.HDNET\Hdnet\Domain\Model\Address
-	HDNET\Profession\Domain\Model\AddressBase {
-		mapping {
-			tableName = tt_address
-		}
-	}
-	HDNET\Profession\Domain\Model\Company < plugin.tx_hdnet.persistence.classes.HDNET\Hdnet\Domain\Model\Address
-	HDNET\Profession\Domain\Model\Company {
-		mapping {
-			# TYPO3\Profession\Domain\Model\Company::RECORD_TYPE
-			recordType = 1
-			columns {
-				longitude.mapOnProperty = longitude
-			}
-		}
-	}
-	HDNET\Profession\Domain\Model\ContactPerson < plugin.tx_hdnet.persistence.classes.HDNET\Hdnet\Domain\Model\Address
-    	HDNET\Profession\Domain\Model\ContactPerson {
-    		mapping {
-    			# TYPO3\Profession\Domain\Model\ContactPerson::RECORD_TYPE
-    			recordType = 2
-    			columns {
-    				longitude.mapOnProperty = longitude
-    			}
-    		}
-    	}
+temp.addressMapping {
+	tableName = tt_address
 }
 
-### Move to general config
-config.tx_extbase.persistence.classes.HDNET\Profession\Domain\Model\StaticCountry < plugin.tx_profession.persistence.classes.HDNET\Profession\Domain\Model\StaticCountry
-config.tx_extbase.persistence.classes.HDNET\Profession\Domain\Model\AddressBase < plugin.tx_profession.persistence.classes.HDNET\Profession\Domain\Model\AddressBase
-config.tx_extbase.persistence.classes.HDNET\Profession\Domain\Model\Company < plugin.tx_profession.persistence.classes.HDNET\Profession\Domain\Model\Company
-config.tx_extbase.persistence.classes.HDNET\Profession\Domain\Model\ContactPerson < plugin.tx_profession.persistence.classes.HDNET\Profession\Domain\Model\ContactPerson
+config.tx_extbase.persistence {
+	classes {
+		HDNET\Profession\Domain\Model\StaticCountry {
+    		mapping.tableName = static_countries
+    	}
+		HDNET\Profession\Domain\Model\Company {
+			mapping < temp.addressMapping
+    		mapping {
+    			#TYPO3\Profession\Domain\Model\Company::RECORD_TYPE
+    			recordType = 1
+    		}
+    	}
+        HDNET\Profession\Domain\Model\ContactPerson {
+            mapping < temp.addressMapping
+            mapping {
+                #TYPO3\Profession\Domain\Model\ContactPerson::RECORD_TYPE
+                recordType = 2
+            }
+        }
+	}
+}

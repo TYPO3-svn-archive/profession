@@ -21,34 +21,36 @@ use HDNET\Hdnet\Domain\Model\AbstractModel;
 class FilterRequest extends AbstractModel{
 
 	/**
-	 * category
+	 * Category
 	 *
 	 * @var string
 	 */
 	protected $category;
 
 	/**
-	 * city
+	 * City
 	 *
 	 * @var string
 	 */
 	protected $city;
 
 	/**
-	 * circumcircle
+	 * Circumcircle
 	 *
 	 * @var string
 	 */
 	protected $circumcircle;
 
 	/**
-	 * zipcode
+	 * Zipcode
 	 *
 	 * @var integer
 	 */
 	protected $zipcode;
 
 	/**
+	 * Set category
+	 *
 	 * @param string $category
 	 */
 	public function setCategory($category) {
@@ -56,6 +58,8 @@ class FilterRequest extends AbstractModel{
 	}
 
 	/**
+	 * Get category
+	 *
 	 * @return string
 	 */
 	public function getCategory() {
@@ -63,6 +67,8 @@ class FilterRequest extends AbstractModel{
 	}
 
 	/**
+	 * Set circumcircle
+	 *
 	 * @param string $circumcircle
 	 */
 	public function setCircumcircle($circumcircle) {
@@ -70,6 +76,8 @@ class FilterRequest extends AbstractModel{
 	}
 
 	/**
+	 * Get circumcircle
+	 *
 	 * @return string
 	 */
 	public function getCircumcircle() {
@@ -77,6 +85,8 @@ class FilterRequest extends AbstractModel{
 	}
 
 	/**
+	 * Set city
+	 *
 	 * @param string $city
 	 */
 	public function setCity($city) {
@@ -84,6 +94,8 @@ class FilterRequest extends AbstractModel{
 	}
 
 	/**
+	 * Get city
+	 *
 	 * @return string
 	 */
 	public function getCity() {
@@ -91,6 +103,8 @@ class FilterRequest extends AbstractModel{
 	}
 
 	/**
+	 * Set zipcode
+	 *
 	 * @param int $zipcode
 	 */
 	public function setZipcode($zipcode) {
@@ -98,10 +112,11 @@ class FilterRequest extends AbstractModel{
 	}
 
 	/**
+	 * Get zipcode
+	 *
 	 * @return int
 	 */
 	public function getZipcode() {
 		return $this->zipcode;
 	}
-
 }

@@ -26,42 +26,56 @@ class Company extends Address {
 	const RECORD_TYPE = 1;
 
 	/**
+	 * Gender
+	 *
 	 * @var string
 	 */
 	protected $gender;
 
 	/**
+	 * Privacy
+	 *
 	 * @var bool
 	 */
 	protected $privacy;
 
 	/**
+	 * Firstname
+	 *
 	 * @var string
 	 */
 	protected $firstName;
 
 	/**
+	 * Lastname
+	 *
 	 * @var string
 	 */
 	protected $lastName;
 
 	/**
+	 * Email
+	 *
 	 * @var string
 	 */
 	protected $email;
 
 	/**
+	 * Phone
+	 *
 	 * @var string
 	 */
 	protected $phone;
 
 	/**
+	 * Fax
+	 *
 	 * @var string
 	 */
 	protected $fax;
 
 	/**
-	 * category
+	 * Categories
 	 *
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\Category>
 	 * @db text
@@ -69,23 +83,31 @@ class Company extends Address {
 	protected $categories;
 
 	/**
+	 * Address
+	 *
 	 * @var string
 	 * @db text
 	 */
 	protected $address;
 
 	/**
+	 * Address2
+	 *
 	 * @var string
 	 * @db text
 	 */
 	protected $address2;
 
 	/**
+	 * Zip
+	 *
 	 * @var string
 	 */
 	protected $zip;
 
 	/**
+	 * Set categories
+	 *
 	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $categories
 	 */
 	public function setCategories($categories) {
@@ -93,18 +115,12 @@ class Company extends Address {
 	}
 
 	/**
+	 * Get categories
+	 *
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
 	public function getCategories() {
 		return $this->categories;
-	}
-
-	/**
-	 * @return \TYPO3\CMS\Extbase\Domain\Model\Category
-	 */
-	public function getCategory() {
-		$this->categories->rewind();
-		return $this->categories->current();
 	}
 
 }

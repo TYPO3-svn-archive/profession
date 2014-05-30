@@ -1,8 +1,9 @@
 
-<h1>Search</h1>
-
-<f:render partial="Profession/Searchfields" arguments="{categories: categories, companies: companies}" />
-
+<div class="textSearch">
+<f:render partial="Profession/TextSearch" arguments="{_all}" />
+<f:render partial="Profession/FilterSearch" arguments="{_all}" />
+</div>
+<p>Ihr Suchergebnis</p>
 <f:if condition="{f:count(subject : offers)} > 5">
 	<f:then>
 		<div class="paginate-wrap">

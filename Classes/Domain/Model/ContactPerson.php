@@ -29,12 +29,16 @@ class ContactPerson extends Address {
 	const RECORD_TYPE = 2;
 
 	/**
+	 * EmployeeCompany
+	 *
 	 * @var \HDNET\Profession\Domain\Model\Company
 	 * @db text
 	 */
 	protected $employeeCompany;
 
 	/**
+	 * Set employee company
+	 *
 	 * @param \HDNET\Profession\Domain\Model\Company $employeeCompany
 	 */
 	public function setEmployeeCompany($employeeCompany) {
@@ -42,6 +46,8 @@ class ContactPerson extends Address {
 	}
 
 	/**
+	 * Get employee company
+	 *
 	 * @return \HDNET\Profession\Domain\Model\Company
 	 */
 	public function getEmployeeCompany() {

@@ -60,7 +60,7 @@ $custom = array(
 				'foreign_table' => 'tx_profession_domain_model_type',
 				'size'          => 1,
 				'minitems'      => 1,
-				'maxitems'      => 1,
+				'maxitems'      => 10,
 			)
 		),
 		'job_challenge'     => array(

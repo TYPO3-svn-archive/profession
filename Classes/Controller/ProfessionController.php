@@ -17,6 +17,7 @@ use HDNET\Hdnet\Utility\TranslateUtility;
 use HDNET\Profession\Domain\Model\Offer;
 use HDNET\Profession\Domain\Model\Request\ApplicationRequest;
 use HDNET\Profession\Domain\Model\Request\FilterRequest;
+use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
 /**
  * CareerController
@@ -52,10 +53,30 @@ class ProfessionController extends AbstractController {
 	protected $staticCountryRepository;
 
 	/**
+	 * @var \HDNET\Profession\Domain\Repository\CandidateTypeRepository
+	 * @inject
+	 */
+	protected $candidateTypeRepository;
+
+	/**
+	 *
+	 */
+	public function initializeAction() {
+		/** @var \TYPO3\CMS\Extbase\Persistence\Generic\QuerySettingsInterface $settings */
+		$settings = $this->objectManager->get('TYPO3\\CMS\\Extbase\\Persistence\\Generic\\QuerySettingsInterface');
+		$settings->setRespectStoragePage(FALSE);
+		$this->offerRepository->setDefaultQuerySettings($settings);
+		$this->typeRepository->setDefaultQuerySettings($settings);
+		$this->candidateTypeRepository->setDefaultQuerySettings($settings);
+	}
+
+	/**
 	 *
 	 * Show all offers
 	 */
 	public function indexAction() {
+		$this->view->assign('candidateTypes', $this->candidateTypeRepository->findByUids(GeneralUtility::intExplode(',', $this->settings['candidateType'], TRUE)));
+		DebuggerUtility::var_dump($this->candidateTypeRepository->findByUids(GeneralUtility::intExplode(',', $this->settings['candidateType'], TRUE)));
 		$this->assignCategoriesAndCities();
 	}
 
@@ -78,6 +99,7 @@ class ProfessionController extends AbstractController {
 			$offers = $this->offerRepository->findAll();
 		}
 		$this->view->assign('offers', $offers);
+		$this->view->assign('request', $filterRequest);
 		$this->assignCategoriesAndCities();
 	}
 
@@ -100,12 +122,10 @@ class ProfessionController extends AbstractController {
 				$this->redirect('detail', 'Profession', 'Profession', array('offer' => $offer));
 			}
 		}
-
-
 		$offerResult = $this->offerRepository->findBySearchWord($properties, $searchWord);
-
 		$this->assignCategoriesAndCities();
 		$this->view->assign('offers', $offerResult);
+		$this->view->assign('searchWord', $searchWord);
 	}
 
 	/**
@@ -180,8 +200,9 @@ class ProfessionController extends AbstractController {
 		$countryNames = array();
 		/** @var \HDNET\Profession\Domain\Model\StaticCountry $country */
 		foreach ($countries as $country) {
-			$countryNames[] .= $country->getCnShortLocal();
+			$countryNames[] .= $country->getShortNameDE();
 		}
+		asort($countryNames);
 		return $countryNames;
 	}
 

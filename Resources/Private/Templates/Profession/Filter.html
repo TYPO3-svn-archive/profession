@@ -1,7 +1,7 @@
 
 <h1>FILTER</h1>
-
-<f:render partial="Profession/Searchfields" arguments="{categories: categories, companies: companies}" />
+<f:render partial="Profession/TextSearch" arguments="{_all}" />
+<f:render partial="Profession/FilterSearch" arguments="{_all}" />
 
 <f:if condition="{f:count(subject : offers)} > 5">
 	<f:then>

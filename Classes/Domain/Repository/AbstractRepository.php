@@ -68,4 +68,17 @@ class AbstractRepository extends \HDNET\Hdnet\Domain\Repository\AbstractReposito
 		                      ), $propertyWithoutWildcard);
 	}
 
+	/**
+	 * Get Objects by uids
+	 *
+	 * @param array $ids
+	 *
+	 * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface|array
+	 */
+	public function findByUids($ids) {
+		$query = $this->createQuery();
+		$query->matching($query->in('uid', $ids));
+		return $query->execute();
+	}
+
 }

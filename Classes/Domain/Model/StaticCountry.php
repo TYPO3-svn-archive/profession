@@ -10,7 +10,7 @@
  */
 
 namespace HDNET\Profession\Domain\Model;
-use HDNET\Hdnet\Domain\Model\AbstractModel;
+
 use SJBR\StaticInfoTables\Domain\Model\Country;
 
 /**

@@ -21,7 +21,7 @@ use HDNET\Hdnet\Domain\Model\AbstractModel;
 class ApplicationRequest extends AbstractModel{
 
 	/**
-	 * gender
+	 * Gender
 	 *
 	 * @var string
 	 * @validate NotEmpty
@@ -30,7 +30,7 @@ class ApplicationRequest extends AbstractModel{
 
 
 	/**
-	 * firstname
+	 * Firstname
 	 *
 	 * @var string
 	 * @validate NotEmpty
@@ -38,7 +38,7 @@ class ApplicationRequest extends AbstractModel{
 	protected $firstname;
 
 	/**
-	 * lastname
+	 * Lastname
 	 *
 	 * @var string
 	 * @validate NotEmpty
@@ -46,7 +46,7 @@ class ApplicationRequest extends AbstractModel{
 	protected $lastname;
 
 	/**
-	 * street
+	 * Street
 	 *
 	 * @var string
 	 * @validate NotEmpty
@@ -54,7 +54,7 @@ class ApplicationRequest extends AbstractModel{
 	protected $street;
 
 	/**
-	 * streetNumber
+	 * StreetNumber
 	 *
 	 * @var string
 	 * @validate NotEmpty
@@ -62,14 +62,14 @@ class ApplicationRequest extends AbstractModel{
 	protected $streetNumber;
 
 	/**
-	 * zip
+	 * Zip
 	 *
 	 * @var integer
 	 */
 	protected $zip;
 
 	/**
-	 * city
+	 * City
 	 *
 	 * @var string
 	 * @validate NotEmpty
@@ -77,7 +77,7 @@ class ApplicationRequest extends AbstractModel{
 	protected $city;
 
 	/**
-	 * country
+	 * Country
 	 *
 	 * @var string
 	 * @validate NotEmpty
@@ -85,7 +85,7 @@ class ApplicationRequest extends AbstractModel{
 	protected $country;
 
 	/**
-	 * phone
+	 * Phone
 	 *
 	 * @var string
 	 * @validate NotEmpty
@@ -93,7 +93,7 @@ class ApplicationRequest extends AbstractModel{
 	protected $phone;
 
 	/**
-	 * email
+	 * Email
 	 *
 	 * @var string
 	 * @validate HDNET\Profession\Validation\Validator\MailValidator
@@ -101,16 +101,46 @@ class ApplicationRequest extends AbstractModel{
 	protected $email;
 
 	/**
-	 * offer
+	 * Offer
 	 *
 	 * @var \HDNET\Profession\Domain\Model\Offer
 	 */
 	protected $offer;
 
 	/**
+	 * Message
+	 *
 	 * @var string
 	 */
 	protected $message;
+
+	/**
+	 * WriteTo
+	 *
+	 * @var string
+	 */
+	protected $writeTo;
+
+	/**
+	 * Curriculum vitae
+	 *
+	 * @var string
+	 */
+	protected $curriculumVitae;
+
+	/**
+	 * Credentials
+	 *
+	 * @var string
+	 */
+	protected $credentials;
+
+	/**
+	 * other
+	 *
+	 * @var string
+	 */
+	protected $other;
 
 	/**
 	 * @param string $gender
